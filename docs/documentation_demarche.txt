@@ -1,0 +1,261 @@
+
+### DOCUMENTATION : DÉMARCHE ET CHOIX TECHNIQUES
+
+L'architecture et la logique de l'agent IA ont été conçues pour assister le Product Owner à travers les quatre phases fondamentales du Product Management. L'objectif : que chaque développement réponde à un besoin réel, s'aligne sur la vision, soit exécutable par l'équipe technique et produise une valeur mesurable. Le POC couvre les trois premières phases (Discovery, Strategy, Delivery) ; la quatrième (Growth) est présentée comme une perspective.
+
+---
+
+## 1. PROBLÉMATIQUE
+
+**Constat** : le Product Owner d'un SaaS de gestion de projet est saturé par un flux continu et non structuré de feedbacks multicanaux (emails, tickets, commentaires).
+**Impact métier** : cette surcharge cognitive monopolise son temps sur le tri manuel, au détriment de la stratégie produit et de la conception de la valeur. Les mêmes problèmes remontent plusieurs fois sous des formes différentes, sans que leur récurrence soit visible. La priorisation devient réactive plutôt que proactive.
+**Problématique** : comment réduire la surcharge cognitive du PO dans le traitement des feedbacks bruts, tout en rendant la priorisation explicite et justifiée, et en fournissant à l'équipe de développement des User Stories standardisées ?
+**Solution apportée** : un agent IA qui agit comme un filtre analytique entre les utilisateurs et le backlog. Il structure, regroupe, score et formalise ; le PO valide chaque étape et garde la décision finale.
+
+---
+
+## 2. LE PARCOURS PRODUIT COUVERT PAR L'AGENT
+
+**2.1 DISCOVERY : comprendre les utilisateurs et valider le besoin**
+
+* **L'enjeu :** capter le signal dans le bruit des retours multicanaux pour identifier les vrais problèmes des utilisateurs avant d'imaginer des solutions.
+* **Le rôle de l'IA :** le LLM intervient en deux temps.
+  1. **Extraction structurée, feedback par feedback.** Pour chaque retour, l'agent produit une fiche normalisée :
+     - `Catégorie` : Bug, Demande de fonctionnalité, UX/Utilisabilité, Question/Support (relève du support, pas du backlog), Non actionnable (remerciement, spam) ;
+     - `Gravité` : Bloquant (l'utilisateur ne peut plus travailler), Majeur (contournement coûteux), Mineur (gêne), Cosmétique ;
+     - `Enjeu business` : Rétention (risque de churn exprimé ou implicite), Adoption (frein à l'utilisation d'une fonctionnalité ou au déploiement dans l'équipe), Expansion (condition d'un upsell ou d'un passage à une offre supérieure), Efficacité (gain de temps au quotidien) ;
+     - `Demande reformulée` : le problème exprimé en une phrase, indépendamment de la solution proposée par le client.
+
+     Les feedbacks classés Question/Support ou Non actionnable sont **écartés du regroupement et du scoring**, mais restent consultables : le PO voit ce qui a été filtré et peut corriger un mauvais filtrage. Les demandes hors vision sont conservées, mais signalées comme telles pour être classées en « Won't » lors de la priorisation.
+  2. **Regroupement en thèmes.** L'agent regroupe les feedbacks qui expriment le même problème, puis rattache chaque thème à un élément existant du backlog ou propose d'en créer un nouveau. C'est ce regroupement qui fait apparaître les motifs récurrents et les tendances : un thème porte le nombre de feedbacks, le nombre de demandeurs distincts, les enjeux business concernés et la gravité maximale observée. Il évite aussi de créer des doublons dans le backlog. Lorsqu'une même personne relance plusieurs fois sur le même problème, ses messages sont rattachés à une seule demande (voir règle R4).
+  3. **Tendance dans le temps.** Chaque feedback est daté. Pour chaque thème, l'agent compare le nombre de feedbacks de la période en cours (par défaut, les 7 derniers jours) à celui de la période précédente, et qualifie le thème : en hausse, stable, en baisse ou nouveau. Ce calcul est fait par le code à partir des dates, pas par le LLM. Le PO distingue ainsi un problème ancien et stable d'un problème qui s'aggrave, par exemple après une mise en production.
+* **Pourquoi pas l'analyse de sentiment :** elle a été envisagée puis écartée.
+  - Quasiment tous les feedbacks entrants sont négatifs par nature : le sentiment discrimine peu.
+  - Le ton ne mesure pas l'importance : un utilisateur très agacé par une couleur de bouton pèse moins qu'un client courtois qui mentionne qu'il évalue un concurrent.
+  - Le sentiment ne nourrit aucune décision du PO, alors que la gravité et l'enjeu business alimentent directement le scoring (Impact RICE) et la catégorie MoSCoW.
+* **Validation :** l'export PDF (FB-003) n'est plus un retour isolé. Regroupé avec les autres retours sur le même problème, il devient un thème mesurable (nombre de feedbacks, gravité, enjeu business, tendance) qui valide un problème d'utilisabilité avant même de proposer un nouveau bouton.
+
+**Réponse à la problématique** : automatisation du tri et du dédoublonnage. Le PO ne lit plus N feedbacks, mais un nombre réduit de problèmes qualifiés, quantifiés et situés dans le temps.
+
+**2.2 STRATEGY : définir les priorités et rendre les arbitrages explicites**
+
+* **L'enjeu :** décider quoi faire (et surtout quoi ne pas faire) en fonction des ressources disponibles et des objectifs de l'entreprise.
+* **Le rôle de l'IA :** l'agent combine deux frameworks complémentaires.
+  - **RICE pour scorer.** Le `Reach` est calculé à partir des données de la Discovery : il compte les demandeurs distincts. L'`Impact`, la `Confidence` et l'`Effort` sont estimés par le LLM, chacun accompagné d'une justification écrite ; l'Impact part d'une valeur de base fixée par la gravité (barème fixe), que le LLM peut ajuster. Le PO peut ajuster chaque estimation. Le score final est **calculé par le code, pas par le LLM** : il est reproductible et vérifiable. Les poids de chaque critère sont réglables par le PO (règle R6).
+  - **MoSCoW pour décider.** Le code répartit les thèmes en Must / Should / Could / Won't à partir du score RICE, de la gravité, de l'enjeu business et de la capacité du sprint (35 points par défaut, modifiable par le PO). Le LLM rédige la justification de chaque classement. Les paramètres de cette répartition sont réglables (règle R7).
+  - Le contexte produit et le backlog existant sont transmis directement au modèle : à ce volume, ils tiennent dans sa fenêtre de contexte.
+* **Validation :** la fonctionnalité de « drag & drop des dépendances » (FB-004) ressort en « Could Have » : son Reach est faible (cible restreinte) et son effort élevé, donc son score RICE est bas. La justification est affichée. Le PO peut modifier une estimation (par exemple l'effort, s'il sait que l'équipe a déjà un composant réutilisable) et voir le classement se recalculer immédiatement.
+
+**Réponse à la problématique** : des choix traçables. L'IA ne décide pas à la place du PO ; elle décompose chaque score, justifie chaque critère et rend l'arbitrage discutable. Face à l'urgence apparente d'un ticket, le PO dispose d'éléments chiffrés pour trancher.
+
+**2.3 DELIVERY : transformer la stratégie en produit livrable**
+
+* **L'enjeu :** fournir à l'équipe de développement des spécifications claires, non ambiguës et prêtes à être affinées.
+* **Le rôle de l'IA :** pour les éléments que le PO coche dans le tableau de priorisation, l'agent rédige :
+  - une User Story au format « En tant que… je veux… afin de… », respectant les critères INVEST ;
+  - des critères d'acceptation au format `Gherkin` (Given / When / Then), réutilisables pour les tests automatisés (BDD) ;
+  - une estimation de complexité relative en `Story Points` (suite de Fibonacci), avec les hypothèses qui la fondent. Sans historique de vélocité de l'équipe, cette estimation sert de point de départ au refinement, pas d'engagement ;
+  - les questions ouvertes à lever avec l'équipe ou le client.
+* **Validation :** le PO relit et ajuste chaque User Story, puis l'exporte au format JSON, structuré pour être importé dans l'outil de l'équipe (Jira dans la vision cible).
+
+**Réponse à la problématique** : standardisation. Le PO part d'un brouillon complet et homogène au lieu d'une page blanche, ce qui supprime le goulot d'étranglement de la rédaction manuelle.
+
+**2.4 GROWTH : mesurer l'impact, l'adoption et la rétention (perspective, hors périmètre du POC)**
+
+* **L'enjeu :** s'assurer que ce qui a été livré résout effectivement le problème initial (Discovery) et apporte la valeur escomptée (Strategy).
+* **Ce que le POC prépare :** la classification par `Enjeu business` relie chaque développement à un indicateur de succès. Un thème « Adoption » (ex. : « adoption technique menacée par l'absence d'intégration GitLab CI ») appelle un KPI d'usage (nombre de Merge Requests liées après déploiement) ; un thème « Rétention » (ex. : hotfix SSO, crash mobile) appelle un suivi du churn sur les comptes concernés.
+* **Évolution envisagée :** analyser les feedbacks post-release sur un thème pour vérifier que le volume de plaintes diminue, et boucler ainsi le cycle.
+
+**Réponse à la problématique** : pilotage par la valeur. En structurant la donnée dès l'ingestion, le PO peut corréler les développements livrés avec la résolution des problèmes initiaux.
+
+**2.5 RÈGLES DE GESTION DE L'AGENT**
+
+Ces règles ont été fixées par l'humain avant la programmation. Elles constituent la partie métier de la spécification transmise à l'IA qui a codé le POC. Les valeurs entre parenthèses sont les valeurs par défaut ; celles marquées « réglable » sont modifiables par le PO dans l'interface.
+
+* **R1 – Entrée : trois sources cumulables.**
+  - *Fichier de sauvegarde multicanal (JSON)* : il contient l'historique des feedbacks des trois canaux (emails, tickets, commentaires), chacun avec son canal et sa date d'origine. C'est la source du jeu de démonstration (50 feedbacks sur 4 semaines) : elle conserve les vraies dates, indispensables au calcul des tendances.
+  - *Boîte mail réelle* : une boîte Gmail dédiée, lue en IMAP, dans un dossier paramétrable (INBOX par défaut). Les nouveaux emails s'ajoutent aux feedbacks du fichier, avec le canal « email » et leur date de réception. Cela permet de montrer en démonstration un email envoyé en direct et intégré à l'analyse. Un **mot-clé** facultatif restreint la lecture aux emails dont l'objet ou le contenu le contient (recherche insensible à la casse et aux accents) : on écarte ainsi le courrier sans rapport avec le produit avant tout appel au modèle, ce qui économise des tokens. Sans mot-clé, tous les emails de la période sont lus.
+  - *Tickets JIRA* : lecture directe d'un site JIRA Cloud par son API, avec une requête JQL paramétrable (par défaut, les tickets créés sur les 30 derniers jours). Les tickets prennent le canal « ticket » : les tickets du jeu de démonstration tiennent temporairement la place des vrais tickets JIRA et seraient retirés lors d'une mise en production. Le demandeur est le rapporteur du ticket (son email, à défaut son nom affiché). Le titre du ticket devient l'objet du feedback, sa description le contenu.
+  - Les identifiants de connexion (mot de passe d'application Gmail, jeton API JIRA, clé API Anthropic) sont lus depuis un fichier de configuration local, jamais écrits dans le code ni dans la documentation.
+* **R2 – Deux modes de fonctionnement.**
+  - *Mode connecté* : lecture du fichier de sauvegarde et de la boîte mail, analyse par Claude (modèle Sonnet 5.5) en direct. Chaque analyse est enregistrée en cache.
+  - *Mode hors ligne* : l'agent rejoue le dernier résultat en cache, sans réseau ni appel au modèle. Il garantit une démonstration fiable et reproductible.
+* **R3 – Filtrage.** Les feedbacks Question/Support et Non actionnable sont exclus du regroupement et du scoring, mais restent consultables. Le PO peut réintégrer un feedback mal filtré. Les demandes hors vision sont conservées et marquées.
+* **R4 – Une demande par personne et par problème.** Si une même personne (même adresse email, ou même pseudonyme pour un avis Play Store) écrit plusieurs fois sur le même thème, ses messages sont rattachés à une seule demande. Cette demande prend la gravité et l'enjeu business les plus élevés observés dans ses messages, et affiche le nombre de relances. Une relance ne gonfle donc pas le Reach, mais une escalade (« notre renouvellement est dans 6 semaines ») est bien prise en compte.
+* **R5 – Tendance.** Le nombre de messages d'un thème sur la période en cours (7 jours, réglable) est comparé à la période précédente. La période en cours se termine à la date de référence incluse : le jour de l'analyse quand la boîte Gmail ou JIRA est lu, le 16/11/2026 pour le jeu de démonstration (période du 10/11 au 16/11).
+  - *Nouveau* : aucun message avant la période en cours ;
+  - *En hausse* / *En baisse* : écart d'au moins 2 messages (réglable) ;
+  - *Stable* : sinon.
+* **R6 – Score RICE.**
+  - *Reach* : nombre de demandeurs distincts du thème (après application de R4) ;
+  - *Impact* : en deux temps, sur l'échelle RICE (3 = massif, 2 = élevé, 1 = moyen, 0,5 = faible, 0,25 = minimal).
+    1. *Base fixe, calculée par le code* à partir de la gravité la plus élevée du thème : Bloquant = 3, Majeur = 2, Mineur = 1, Cosmétique = 0,5. Ce barème ne change pas.
+    2. *Ajustement estimé par le LLM* : il peut monter ou descendre la base d'un cran au maximum, en tenant compte de l'enjeu business et des objectifs du trimestre, et doit justifier tout écart (par exemple, un problème Majeur qui menace un renouvellement passe de 2 à 3). Sans raison particulière, l'Impact reste égal à la base.
+    Le PO voit la base, la valeur proposée et la justification, et peut ajuster la valeur finale ;
+  - *Confidence* : estimée par le LLM (50 %, 80 % ou 100 %), selon la clarté et la cohérence des feedbacks, avec justification ;
+  - *Effort* : en story points (suite de Fibonacci), estimé par le LLM avec justification ; si l'élément existe déjà dans le backlog avec une estimation, celle-ci est reprise ;
+  - *Poids* : chaque critère a un poids réglable (1 par défaut). Score = Reach^p1 × Impact^p2 × Confidence^p3 / Effort^p4. Avec tous les poids à 1, on retrouve le RICE classique ; augmenter un poids donne plus d'influence à ce critère dans le classement ;
+  - le PO peut corriger n'importe quelle valeur d'un thème ; le score et le classement sont alors recalculés immédiatement.
+* **R7 – Répartition MoSCoW** (paramètres réglables).
+  - *Won't* : demandes hors vision ;
+  - *Must* : d'abord les thèmes Bloquants à enjeu Rétention (règle activable), puis les thèmes par score RICE décroissant, tant que la capacité du sprint n'est pas atteinte (35 points, réglable). Si les seuls thèmes Bloquants dépassent la capacité, l'agent le signale ;
+  - *Should* : les thèmes suivants, dans la limite d'une capacité de sprint supplémentaire ;
+  - *Could* : les autres ;
+  - le PO peut forcer la catégorie de n'importe quel thème.
+* **R8 – User Stories.** Générées uniquement pour les thèmes cochés par le PO, puis exportées en JSON.
+* **R9 – Évaluation.** L'agent est comparé aux étiquettes de référence validées par l'humain :
+  - précision de la catégorie, de la gravité et de l'enjeu business, feedback par feedback ;
+  - qualité du regroupement : chaque thème de l'agent est associé au thème de référence majoritaire, puis on mesure la part de feedbacks bien regroupés ;
+  - taux de pièges correctement filtrés.
+  Objectif indicatif : au moins 80 % sur chaque mesure, et 100 % des spams et remerciements filtrés. [À ajuster après les premiers résultats.]
+* **R10 – Suivi et information des demandeurs.** Pour chaque problème, un **état** est affiché : le suivi saisi par le PO prime (« En cours de traitement », « Correctif déployé ») ; à défaut, il découle du backlog (aucun élément : « À créer » ; élément « À faire » : « Ticket créé » ; « En cours » : « En cours (backlog) » ; livré mais ne couvrant qu'une partie du besoin : « Livré, insuffisant »). Sur action explicite du PO, un email informe les demandeurs que le problème est en cours de traitement, puis que le correctif est déployé. Un seul email part de la boîte Gmail du PO, le PO en destinataire et les demandeurs en copie cachée. Seuls les demandeurs issus de Gmail ou de JIRA sont contactés : les adresses du jeu de démonstration sont fictives. Le message est un modèle fixe modifiable, sans appel au modèle. Le journal des envois (`cache/suivi_po.json`) garde la date, le statut et le nombre de destinataires, jamais les adresses.
+
+---
+
+## 3. DÉMARCHE
+
+**3.1 Hypothèses de départ**
+* Le volume traité par le PO se compte en dizaines de feedbacks par semaine, pas en milliers : il tient dans le contexte d'un LLM.
+* Le principal problème n'est pas la lecture de chaque feedback, mais l'absence de vue consolidée : les mêmes problèmes reviennent sous des formes différentes.
+* Le PO veut un assistant, pas un pilote automatique : chaque sortie de l'agent doit être justifiée et modifiable.
+* Les feedbacks du PO arrivent surtout par email et par tickets : l'agent doit pouvoir lire ces canaux réels, et pas seulement un fichier de démonstration. D'où les connecteurs Gmail et JIRA (règle R1).
+* Sans historique de vélocité de l'équipe, l'effort estimé par le modèle est un point de départ pour le refinement, pas un engagement : il est justifié, affiché comme une estimation et modifiable par le PO.
+
+**3.2 Étapes et itérations**
+1. Compréhension du besoin et cadrage à partir du sujet et du quotidien d'un PO (Discovery / Strategy / Delivery / Growth). *Réalisé par l'humain.*
+2. Rédaction d'une première version de la spécification (V1) : problématique, classification par catégorie et sentiment, priorisation MoSCoW et Valeur/Effort, User Stories en Gherkin, architecture cible. *Réalisé par l'humain.* Les règles de gestion (section 2.5) ont été formalisées dans un second temps, une fois les questions de calcul identifiées.
+2 bis. **Itération : revue de la V1 confrontée au cahier des charges.** Constat : la V1 qualifiait chaque feedback isolément, mais il manquait les indicateurs qui permettent au PO de décider (récurrence, tendance, score chiffré, enjeu business). Ces KPIs ont été ajoutés dans une V2 (détail en 3.3). La priorisation a aussi été bornée par la capacité du sprint (35 points par défaut, réglable) : le Must s'arrête quand le sprint est plein, et une alerte signale un dépassement (règle R7). *Réalisé par l'humain, avec l'IA comme relecteur critique.*
+3. Constitution du jeu de données. *Spécifié par l'humain, généré par l'IA, relu par l'humain.* L'humain a rédigé le prompt de génération (conservé dans `data/prompt_generation_donnees.md`) en fixant ce que la démo doit prouver : 9 problèmes récurrents aux formulations variées, des tendances différentes (un thème nouveau, un en hausse, un en baisse, les autres stables) et des pièges volontaires (questions de support, spam, demandes hors vision, un feedback qui mélange deux problèmes, un faux ami du problème SSO). L'IA a généré 50 feedbacks répartis sur 4 semaines et 3 canaux, un backlog de 12 éléments et le contexte produit d'une entreprise fictive, Orbiteam.
+
+   **Pourquoi des pièges ? (amélioration par rapport à un jeu « propre »)** Dans la réalité, une partie importante de ce qui arrive au PO n'est ni pertinente ni utile pour le backlog. Un jeu de données composé uniquement de feedbacks « propres » aurait rendu la démo trop facile et n'aurait rien prouvé. Environ 1 feedback sur 6 est donc volontairement un piège, pour vérifier que l'agent sait filtrer avant d'analyser :
+   - **non pertinents** : remerciements, spam commercial ;
+   - **non utiles pour le backlog** : questions de support (facture, invitation d'un prestataire, mot de passe), qui relèvent du support et non de l'évolution du produit ;
+   - **hors vision** : demandes de module de paie ou de CRM, à écarter même si elles sont formulées comme des besoins ;
+   - **trompeurs** : un problème de mot de passe qui ressemble à l'incident SSO sans en faire partie, un feedback qui mêle deux problèmes distincts, des feedbacks qui proposent une solution (« un export sur une page A3 ») au lieu de décrire le problème, et un avis Play Store de cinq mots sans contexte.
+
+   Le taux de pièges correctement filtrés fait partie des mesures d'évaluation de l'agent (étape 6).
+4. Rédaction des prompts internes de l'agent (classification, regroupement, estimation RICE, justification MoSCoW, rédaction des User Stories). *Proposés par l'IA à partir d'un pré-prompt rédigé par l'humain, qui fixe les règles de gestion R1 à R9 ; relus et validés par l'humain.* Ces prompts portent la logique métier de l'agent : chaque consigne a été vérifiée pour correspondre à une règle décidée par l'humain.
+4 bis. Rédaction du prompt de développement à partir de la documentation et des prompts validés (conservé dans `prompt_developpement.md`). *Proposé par l'IA, relu et validé par l'humain.*
+5. Programmation du POC (agent, interface, tests) à partir de ce prompt. *Réalisé par l'IA.*
+6. Validation des étiquettes de référence (thème, catégorie, gravité, enjeu attendus pour chaque feedback), puis évaluation de l'agent en comparant ses résultats à ces étiquettes. Les étiquettes découlent du plan de génération ; l'humain les relit une à une, car on ne peut pas évaluer une IA avec des réponses attendues qu'une IA a fixées seule. *Réalisé par l'humain.*
+7. Programmation, puis vérification étape par étape : calculs déterministes et leurs tests, appels au modèle et cache, pipeline, interface, évaluation. 61 tests automatiques, sans appel au modèle (faux modèle répondant à partir des étiquettes).
+8. **Obstacles rencontrés pendant la réalisation, et leurs solutions :**
+   - *Température non réglable.* Le prompt de développement prévoyait une température de 0 pour rendre les réponses reproductibles. Le SDK Anthropic actuel ne propose plus ce réglage. Solution : la reproductibilité repose sur le cache (une même entrée renvoie toujours la même réponse), et le mode hors ligne rejoue exactement la même analyse.
+   - *Date de référence décalée d'un jour.* En vérifiant les tendances sur le jeu de données, il est apparu qu'une date de référence au 17/11, comptée comme incluse, faisait basculer les feedbacks SSO du 10/11 dans la période précédente : le thème n'apparaissait plus comme « Nouveau ». La règle a été précisée (dernier jour inclus) et la date de démonstration fixée au 16/11.
+   - *Tableau éditable qui se réordonne.* Le classement change à chaque modification, ce qui risquait d'appliquer les modifications du PO à la mauvaise ligne. Solution : les modifications sont rattachées à l'identifiant du thème, pas à la position de la ligne, et le tableau est reconstruit après chaque modification.
+   - *Courrier hors sujet dans la boîte Gmail.* Chaque email lu est envoyé au modèle et coûte des tokens, même s'il n'a aucun rapport avec le produit. Solution : un mot-clé facultatif, cherché dans l'objet et le contenu sans tenir compte de la casse ni des accents, écarte ce courrier avant tout appel au modèle (R1).
+   - *Crédit API épuisé lors du premier appel réel.* Pour tester l'interface sans attendre, une analyse **simulée** a été produite à partir des étiquettes de référence. Elle est signalée par un bandeau et exclue de l'évaluation. Une fois les crédits rechargés, les analyses réelles du 17/11/2026 ont pris le relais (étape 9). Le cache de démonstration réel est produit par l'interface en mode Connecté ou par une commande dédiée (`lancer_analyse.py`).
+   - *Gravité systématiquement sous-estimée par l'agent.* La première analyse réelle a obtenu 64 % sur la gravité, avec 16 écarts tous orientés vers le bas : des crashs de l'application Android étaient classés Majeur, voire Mineur, au lieu de Bloquant. La cause ne venait pas du modèle mais du prompt P1, qui demandait de choisir le niveau le plus bas en cas de doute et réservait « Bloquant » à un produit entièrement inaccessible. Solution : la règle du doute a été inversée (gravité la plus élevée, que le PO peut toujours abaisser) et « Bloquant » couvre désormais une plateforme ou une action centrale inutilisable. Le problème a été détecté grâce à l'évaluation par rapport aux étiquettes de référence, et non à la lecture des résultats, qui paraissaient plausibles (détail à l'étape 9).
+9. **Première analyse réelle (17/11/2026) et itération 1 sur le prompt P1.**
+   - *Résultats* (50 feedbacks, Claude Sonnet 5.5, comparés aux étiquettes de référence) : catégorie 90 %, regroupement 100 %, pièges écartés 100 %, demandes hors vision 100 %, mais **gravité 64 %** et **enjeu business 77 %**, sous l'objectif de 80 %.
+   - *Constat.* Les 16 écarts de gravité vont **tous vers le bas**. C'est un biais, pas du bruit. Il venait du prompt P1 lui-même : la consigne « en cas de doute, choisis le niveau le plus bas » et une définition de « Bloquant » limitée au produit entier. Le modèle justifiait par exemple un crash de l'application Android en Majeur parce que « l'accès au produit n'est pas dit totalement bloqué ». Conséquence en cascade : ces crashs étaient classés Adoption au lieu de Rétention, et la règle R7 « Bloquant + Rétention = Must d'office » ne s'appliquait qu'au SSO.
+   - *Correction* (*demandée par l'humain, rédigée par l'IA*) : en cas de doute, la gravité la plus **élevée** est retenue, car le PO peut toujours abaisser une gravité surestimée alors qu'un problème sous-estimé risque de passer inaperçu. « Bloquant » couvre désormais une plateforme ou une action centrale inutilisable. « Rétention » renvoie explicitement à la gravité Bloquant. Le détail figure dans `prompts_agent.md` (décision n° 3).
+   - *Autres constats, non traités à ce stade* : le crash Android vague (« Crash à chaque fois ») forme un thème à part, ce que la mesure « thème majoritaire » ne détecte pas ; le RICE place l'intégration GitLab en Should malgré un risque de non-renouvellement sur deux comptes (Reach faible) ; la frontière entre UX et demande de fonctionnalité reste floue (5 écarts, sans effet sur le classement).
+   - *Résultat de l'itération 1* (nouvelle analyse du 17/11/2026) : **gravité de 64 % à 86 %**, **enjeu business de 77 % à 89 %**. Les autres mesures sont inchangées (catégorie 90 %, regroupement, filtrage et hors vision à 100 %). Toutes les mesures atteignent désormais l'objectif.
+     - *Effet sur la priorisation* : le crash Android passe en Bloquant + Rétention et devient Must d'office, comme le SSO. Les deux incidents arrivent en tête du classement.
+     - *Contrepartie attendue* : les 6 écarts de gravité restants vont désormais **vers le haut** (Mineur classé Majeur « par prudence » : agenda Google, dépendances du Gantt, export des temps). Ce surclassement a un coût : l'agenda Google entre dans les Must et le Kanban lent descend en Could. Le choix est assumé, car une surestimation est visible et se corrige en un clic par le PO, alors qu'une sous-estimation passe inaperçue.
+     - *Limites qui demeurent* : l'avis vague « Crash à chaque fois » forme toujours un thème à part, désormais Must d'office avec une Confidence de 50. Il faudrait le rattacher au crash Android dans le prompt P2. L'intégration GitLab reste en Should malgré le risque de non-renouvellement. L'Effort estimé par P3 varie d'une analyse à l'autre pour un même thème (Kanban : 8 puis 13 points), ce qui confirme qu'une estimation du modèle est un point de départ pour le refinement, pas une valeur à reprendre telle quelle.
+
+10. **Ajustements après les premières analyses réelles (17/11/2026).** *Demandés par l'humain, programmés par l'IA, chacun avec ses tests.*
+   - *Forçage MoSCoW peu visible* : la fonction existait, mais la colonne était reléguée au bord du tableau et rien n'indiquait qu'elle se modifie. La colonne a été placée à côté du rang, avec la consigne « Double-cliquez sur une cellule ».
+   - *Filtre par mot-clé sur les emails* : il écarte le courrier sans rapport avec le produit avant tout appel au modèle (R1).
+   - *Connecteur JIRA Cloud* : lecture directe des tickets par l'API, avec une requête JQL (R1). La lecture d'un export CSV a été envisagée ; l'humain a choisi la connexion directe, plus proche d'un usage réel. Le connecteur est testé avec un faux serveur JIRA ; il reste à le vérifier sur une vraie instance.
+   - *Retours de l'humain sur l'interface* (18/11/2026) : design épuré sur le modèle d'un tableau de bord fourni par l'humain ; réglages expliqués (effet des poids RICE, sens de la date de fin de période) ; colonnes renommées (« Gravité » au lieu de « Gravité max », « Récurrence » au lieu de « Messages ») ; tendance qui affiche explicitement les deux périodes comparées ; colonne « État » pour repérer les problèmes sans ticket ; « Qualité de l'agent » sortie du parcours, car c'est un écran de monitoring et non une étape de fin de cycle ; nouvel onglet « Informer les clients » (règle R10).
+
+11. **Préparation de la restitution (18-19/11/2026).** *Support proposé par l'IA, relu, corrigé et réorganisé par l'humain.*
+   - L'IA a produit un premier support à partir de cette documentation et d'un modèle de présentation fourni par l'humain, puis l'a comparé à l'énoncé. Écarts relevés : l'agent n'était pas montré, les trois blocs de l'énoncé (comprendre, arbitrer, formaliser) et les tests n'apparaissaient pas, l'ordre ne suivait pas le déroulé imposé.
+   - L'humain a ensuite resserré le support à 12 slides : le problème et les hypothèses, ce que fait l'agent, la démarche, les obstacles et leurs solutions, les idées ajoutées au sujet initial, les itérations, le partage entre l'humain et l'IA, l'architecture, les choix techniques, les tests, la suite. La démonstration se fait en direct dans l'application, sans slide dédiée.
+   - Corrections apportées par l'humain sur le contenu : les prompts de l'agent ont été générés à partir d'un pré-prompt humain (étape 4) ; l'obstacle du crédit API est résolu ; les pistes de suite retenues sont les tests en conditions réelles, d'autres sources (Slack, Zendesk, Intercom…), des alertes, la boucle Growth et le passage à l'échelle.
+
+**3.3 Évolution de la réflexion : de la V1 à la V2**
+
+La première version de la spécification décrivait bien le parcours du PO, mais elle produisait des **étiquettes**, pas des **indicateurs de décision**. En la relisant face au cahier des charges, une question est apparue : avec cette V1, le PO peut-il répondre à « qu'est-ce que je traite en premier, et pourquoi » ? La réponse était non. Il savait de quel type était chaque feedback, mais pas combien de clients étaient concernés, si le problème s'aggravait, ni ce qu'il coûtait à l'entreprise.
+
+Les KPIs manquants ont donc été ajoutés :
+
+| Question du PO | V1 | V2 : KPI ajouté |
+|---|---|---|
+| Ce problème est-il isolé ou récurrent ? | Non traité : chaque feedback est analysé seul | **Volume par thème** : nombre de feedbacks regroupés sur le même problème |
+| Le problème s'aggrave-t-il ? | Non traité | **Tendance** : évolution du volume entre la période en cours et la précédente (hausse, stable, baisse, nouveau) |
+| Est-ce grave pour l'utilisateur ? | Sentiment (Bloquant / Frustration / Positif) mêlant ton et gravité | **Gravité** : Bloquant / Majeur / Mineur / Cosmétique, indépendamment du ton |
+| Qu'est-ce que ça coûte à l'entreprise ? | Non traité | **Enjeu business** : Rétention / Adoption / Expansion / Efficacité |
+| Quelle priorité, chiffrée ? | Valeur/Effort, qualitatif | **Score RICE** calculé par le code, chaque critère justifié |
+| Comment mesurer le succès après livraison ? | Évoqué dans la partie Growth | **Lien Enjeu business → KPI de succès** (ex. Adoption → usage de la fonctionnalité) |
+
+Ce qu'il faut retenir de cette itération : l'agent est passé d'un **outil de tri** (ranger les feedbacks dans des cases) à un **outil d'aide à la décision** (dire au PO où agir et pourquoi). C'est aussi ce qui a guidé le reste des choix : chaque information produite par l'agent doit servir une décision du PO, sinon elle n'est pas affichée. L'analyse de sentiment a été retirée pour cette raison.
+
+**3.4 Pistes envisagées puis écartées**
+* **Analyse de sentiment** → remplacée par Gravité + Enjeu business (voir 2.1 et 3.3).
+* **Base vectorielle (RAG) pour comparer aux demandes passées** → écartée pour le POC : à ce volume, le backlog tient dans le contexte du modèle, et une base vectorielle ajouterait de la complexité sans gain. Elle redevient pertinente au-delà de quelques centaines d'éléments.
+* **Compter chaque message dans le Reach** → écarté : un client qui relance trois fois aurait pesé trois fois plus qu'un client qui n'écrit qu'une fois. Une relance mesure l'insistance d'un client, pas le nombre d'utilisateurs touchés. Le Reach compte donc les demandeurs distincts (règle R4). L'insistance n'est pas perdue pour autant : le nombre de relances reste affiché, et la gravité ou l'enjeu le plus élevé exprimé dans les relances est retenu.
+* **Calcul de l'Impact : deux options envisagées, une solution intermédiaire retenue.**
+  - *Barème fixe seul* (Bloquant = 3, Majeur = 2…) : reproductible, mais la gravité mesure la gêne d'un utilisateur, pas tout ce que le problème coûte à l'entreprise. Un problème Majeur qui menace un renouvellement pèse plus qu'un problème Majeur sans enjeu commercial.
+  - *Estimation libre par le LLM* : plus nuancée, mais moins reproductible, et l'Impact risque de dériver d'une analyse à l'autre.
+  - *Solution retenue* : le barème fixe de gravité donne la base, le LLM peut l'ajuster d'un cran au maximum en justifiant l'écart, et le PO a le dernier mot. On garde un socle stable et explicable, tout en tenant compte de l'enjeu business (règle R6).
+* **Score de priorité produit directement par le LLM** → écarté : un score généré n'est ni reproductible ni vérifiable. Le LLM estime les critères, le code calcule.
+* **Matrice Valeur/Effort seule** → remplacée par RICE, qui distingue la portée (Reach), l'impact et le niveau de confiance, et donc explique mieux le classement.
+* **Lecture des tickets par un export CSV de JIRA** → écartée au profit de la connexion directe à l'API JIRA Cloud, avec une requête JQL. L'export aurait été plus simple à tester, mais il impose une manipulation manuelle à chaque analyse ; la connexion directe est plus proche d'un usage réel (décision de l'humain, étape 10).
+
+**3.5 Usage des assistants IA et contrôle**
+* **Réalisé par l'humain :** la compréhension du besoin, la rédaction de la documentation et le squelette fonctionnel de l'agent (étapes, axes de classification, choix des frameworks, format des sorties). Ces choix engagent la compréhension métier et ne pouvaient pas être délégués.
+* **Assistant utilisé :** Claude (Anthropic), toujours à partir d'un prompt rédigé par l'humain ; Claude Code pour la programmation du POC.
+* **Délégué à l'IA :**
+  - la génération du jeu de données (50 feedbacks, backlog, contexte produit), à partir d'un prompt rédigé par l'humain qui fixe les thèmes, les tendances et les pièges à inclure ;
+  - la proposition des prompts internes de l'agent, à partir d'un pré-prompt humain qui fixe les règles de gestion, ensuite relus et validés par l'humain ;
+  - la préparation du support de restitution, à partir de cette documentation et d'un modèle fourni par l'humain, qui l'a relu, corrigé et réorganisé (étape 11) ;
+  - la proposition du prompt de développement, relu et validé par l'humain ;
+  - la programmation du POC, à partir de ce prompt. Ce partage reflète un usage réaliste en mission : l'humain définit le *quoi* et le *pourquoi*, l'IA accélère le *comment*.
+* **Pourquoi ce partage est sûr :** l'IA écrit le code, mais elle ne décide d'aucune règle métier. Les règles viennent de la spécification humaine, et leur bonne application est vérifiée (voir ci-dessous).
+* **Vérifié moi-même :**
+  - relecture du jeu de données : réalisme des formulations, présence des pièges prévus, cohérence des dates avec les tendances attendues ;
+  - validation des étiquettes de référence, feedback par feedback ;
+  - mesure de la précision de l'agent sur le jeu étiqueté à la main ;
+  - relecture du code produit par l'IA, en priorité sur les parties déterministes (calcul RICE, calcul des tendances) ;
+  - relecture des regroupements et des User Stories générées ;
+  - tests unitaires sur le calcul du score et la validation des sorties ;
+  - analyse des écarts de la première analyse réelle : l'évaluation a révélé un biais systématique du modèle vers les gravités basses, causé par une consigne du prompt P1. Le prompt a été corrigé après décision humaine, et la correction est tracée (étape 9 et `prompts_agent.md`). Sans cette mesure, le biais serait passé inaperçu : le classement obtenu restait plausible.
+
+---
+
+## 4. CHOIX TECHNIQUES
+
+| Composant | Choix | Motivation |
+|---|---|---|
+| Modèle | Claude Sonnet 5.5 (API Anthropic) | Bonne compréhension du français, sorties structurées fiables, bon compromis entre qualité et coût pour un usage quotidien. |
+| Modes | Connecté (API) + hors ligne (cache) | Le mode hors ligne rend la démonstration indépendante du réseau et de la variabilité du modèle. |
+| Entrée / sortie | Fichier de sauvegarde multicanal (JSON) + boîte Gmail réelle (IMAP, dossier paramétrable) + tickets JIRA Cloud (API REST, requête JQL) en entrée, JSON en sortie | Le fichier conserve les dates d'origine des trois canaux ; la boîte mail montre l'intégration de feedbacks réels ; le JSON de sortie est importable dans un outil de ticketing. |
+| Sorties du LLM | JSON validé par un schéma | Chaque réponse est contrôlée avant usage ; une sortie invalide est détectée au lieu de se propager. |
+| Calculs | Python | Le score RICE, les tendances et le classement sont déterministes et testables. |
+| Interface | Streamlit, en local | Rapide à construire, utilisable par un PO sans friction : un parcours en quatre onglets (Analyser, Prioriser, Rédiger, Informer les clients), un espace Monitoring séparé (qualité de l'agent, contrôles du code), un tableau de priorisation éditable et des réglages expliqués (poids RICE, capacité du sprint, paramètres MoSCoW). Habillage épuré (`ui.py`, `.streamlit/config.toml`) : bandeau de synthèse, cartes d'indicateurs, onglets en pilules. |
+| Données | 50 feedbacks et 12 éléments de backlog en JSON, contexte produit en Markdown, générés par l'IA | Proportionné à un POC ; remplaçable par des connecteurs réels. |
+| Tests | 61 tests automatiques (pytest, faux modèle) + évaluation sur jeu étiqueté | Vérifier le code sans dépendre du modèle d'un côté, mesurer la qualité des réponses du LLM de l'autre. |
+| Contrôle des réponses du LLM | Validation par schéma, relance unique en renvoyant l'erreur au modèle, contrôles métier (Impact à un cran maximum, échelles, une demande dans un seul thème) | Une réponse du modèle n'est jamais utilisée sans contrôle ; chaque correction est affichée au PO. |
+| Architecture | Pipeline Python explicite, sans framework d'agents ni base de données | Proportionné au POC : chaque étape est lisible, testable et remplaçable. |
+
+---
+
+## 5. IMPLÉMENTÉ DANS LE POC / VISION CIBLE
+
+| Implémenté dans le POC | Vision cible |
+|---|---|
+| Fichier de sauvegarde multicanal + lecture d'une boîte Gmail + lecture des tickets JIRA | Connecteurs directs : Slack, commentaires in-app, avis des stores |
+| Regroupement en thèmes + tendance sur la période | Alertes automatiques quand un thème s'emballe |
+| Backlog et contexte produit transmis au modèle | Base vectorielle quand le volume le justifie |
+| Scoring RICE + proposition MoSCoW, éditables par le PO | Apprentissage des corrections du PO pour affiner les estimations |
+| User Stories + Gherkin + complexité relative | Calibrage des story points sur l'historique de vélocité de l'équipe |
+| Export des User Stories en JSON | Synchronisation bidirectionnelle avec Jira |
+| — | Analyse des feedbacks post-release (Growth) |
+
+---
+
+## 6. AMÉLIORATIONS À FAIRE
+
+* Connecteurs d'ingestion réels et traitement en continu.
+* Synchronisation avec Jira via API.
+* Passage à l'échelle avec une base vectorielle (RAG) : quand le backlog et l'historique des feedbacks dépassent quelques centaines d'éléments, ils ne tiennent plus dans le contexte du modèle. L'agent irait alors chercher uniquement les éléments proches d'un nouveau feedback, pour le regroupement et la détection de doublons.
+* Boucle de feedback : réutiliser les corrections du PO (scores, regroupements) comme exemples pour les prochaines analyses.
+* Suivi post-release des thèmes pour mesurer la résolution des problèmes (boucle Growth : après une livraison, vérifier que les plaintes sur le thème baissent).
+* Tests en conditions réelles : envoi d'un email depuis Gmail (R10) et lecture d'une vraie instance JIRA.
+* Autres sources de feedbacks : Slack, Zendesk, Intercom…
+* Frameworks de priorisation au choix, pour s'adapter à chaque industrie et à chaque méthode agile : RICE (actuel), WSJF pour une organisation en SAFe, Kano, ICE… Le calcul restant déterministe, changer de framework revient à changer la formule et les critères que le modèle estime, sans toucher au reste du pipeline.
+* Alertes : prévenir le PO dès qu'un thème apparaît ou s'emballe.

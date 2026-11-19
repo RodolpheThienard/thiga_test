@@ -1,0 +1,2365 @@
+{
+ "meta": {
+  "date_analyse": "2026-11-17T16:31:51",
+  "modele": "simulation (aucun appel au modèle)",
+  "sources": [
+   "Avis Play Store",
+   "Commentaire in-app",
+   "Email support",
+   "Ticket support"
+  ],
+  "nb_feedbacks": 50,
+  "date_reference": "2026-11-16",
+  "reintegres": [],
+  "simulee": true
+ },
+ "feedbacks": [
+  {
+   "id": "FB-001",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-20T09:12",
+   "auteur": "Claire Martin",
+   "email": "claire.martin@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": null,
+   "contenu": "Super la nouvelle vue tableau, on gagne vraiment du temps en réunion d'équipe. Merci !"
+  },
+  {
+   "id": "FB-002",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-20T14:40",
+   "auteur": "Julien Roche",
+   "email": "julien.roche@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": "Trop de mails",
+   "contenu": "Bonjour, depuis qu'on a ajouté toute l'équipe sur le projet de refonte, je reçois plus de 80 notifications par jour. Chaque commentaire, chaque changement de statut... Je finis par tout ignorer, y compris les choses importantes. Est-ce qu'il existe un résumé quotidien ? Sinon je vais désactiver les notifications complètement."
+  },
+  {
+   "id": "FB-003",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-21T10:05",
+   "auteur": "Sophie Laurent",
+   "email": "sophie.laurent@cabinetverdierconseil.fr",
+   "entreprise": "Cabinet Verdier Conseil",
+   "objet": "Export PDF du planning illisible",
+   "contenu": "Quand j'exporte le planning d'un projet en PDF pour l'envoyer à mon client, les noms des tâches sont tronqués et le diagramme est coupé sur plusieurs pages sans légende. Je dois refaire le document à la main sous PowerPoint avant chaque comité de pilotage, ça me prend une heure à chaque fois."
+  },
+  {
+   "id": "FB-004",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-22T09:30",
+   "auteur": "Marc Dubreuil",
+   "email": "marc.dubreuil@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": null,
+   "contenu": "Il faudrait pouvoir créer les dépendances entre tâches directement en tirant une flèche d'une barre à l'autre dans le Gantt, comme dans MS Project. Là il faut passer par le panneau de détail de la tâche, c'est laborieux quand on a 200 tâches."
+  },
+  {
+   "id": "FB-005",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-22T11:20",
+   "auteur": "Nadia Benali",
+   "email": "nadia.benali@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": "Question facture",
+   "contenu": "Bonjour, pouvez-vous m'envoyer la facture du mois de septembre avec notre numéro de TVA intracommunautaire ? Merci."
+  },
+  {
+   "id": "FB-006",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-23T09:47",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Intégration GitLab ?",
+   "contenu": "Nous utilisons GitLab auto-hébergé. Est-il prévu de lier les merge requests aux tâches Orbiteam, comme vous le faites avec GitHub ? Aujourd'hui nos développeurs continuent de suivre leur travail dans les issues GitLab et ne mettent pas Orbiteam à jour : les chefs de projet n'ont donc pas une vision fiable de l'avancement."
+  },
+  {
+   "id": "FB-007",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-23T17:02",
+   "auteur": "Isabelle Fournier",
+   "email": "isabelle.fournier@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Export PDF",
+   "contenu": "Les exports PDF ne respectent pas notre charte : pas de logo, police par défaut, et le tableau des jalons déborde de la page. Notre comité de direction exige un format propre, on ne peut pas lui présenter ça."
+  },
+  {
+   "id": "FB-008",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-24T08:55",
+   "auteur": "Kevin Lambert",
+   "email": "kevin.lambert@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": null,
+   "contenu": "Les notifs par mail c'est l'enfer, on ne peut pas juste choisir quels événements on veut recevoir ?"
+  },
+  {
+   "id": "FB-009",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-24T13:30",
+   "auteur": "Amélie Perrin",
+   "email": "amelie.perrin@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Synchronisation calendrier",
+   "contenu": "Est-ce que les échéances des tâches peuvent apparaître dans Google Agenda ? Toute notre équipe vit dans son agenda, et les deadlines Orbiteam passent inaperçues. Si c'était possible, on étendrait Orbiteam au service commercial (15 personnes de plus)."
+  },
+  {
+   "id": "FB-010",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-25T10:10",
+   "auteur": "Laurent Chevalier",
+   "email": "laurent.chevalier@conseilco.fr",
+   "entreprise": "Conseil & Co",
+   "objet": "Suivi du temps pour la facturation",
+   "contenu": "Nous facturons nos clients au temps passé. Le suivi du temps d'Orbiteam est pratique, mais impossible d'exporter les heures par client et par mois dans un format exploitable par notre logiciel de facturation. On fait des copier-coller depuis l'écran. Un export CSV filtrable suffirait."
+  },
+  {
+   "id": "FB-011",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-27T15:20",
+   "auteur": "Hugo Martin",
+   "email": "hugo.martin@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": null,
+   "contenu": "Est-ce qu'Orbiteam pourrait gérer les fiches de paie et les congés de l'équipe ? Ce serait top d'avoir tout au même endroit."
+  },
+  {
+   "id": "FB-012",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-28T09:15",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Lenteurs sur le Kanban",
+   "contenu": "Sur notre projet principal (environ 1 500 cartes), le tableau Kanban met 8 à 10 secondes à s'afficher et chaque déplacement de carte rame. Sur les petits projets, aucun souci."
+  },
+  {
+   "id": "FB-013",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-28T11:42",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Re: Intégration GitLab ?",
+   "contenu": "Je reviens vers vous : notre CTO hésite à renouveler les 40 licences de l'équipe tech en janvier si on ne peut pas relier Orbiteam à GitLab. Les développeurs considèrent que c'est une double saisie inutile."
+  },
+  {
+   "id": "FB-014",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-29T09:03",
+   "auteur": "Élodie Simon",
+   "email": "elodie.simon@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": null,
+   "contenu": "Le PDF du Gantt coupe les barres en plein milieu entre deux pages. Pas présentable."
+  },
+  {
+   "id": "FB-015",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-29T10:20",
+   "auteur": "Romain Petit",
+   "email": "romain.petit@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": "Dépendances dans le Gantt",
+   "contenu": "Créer une dépendance demande 5 clics. Un glisser-déposer entre les barres serait bien plus naturel."
+  },
+  {
+   "id": "FB-016",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-30T09:00",
+   "auteur": "Sarah Morel",
+   "email": "sarah.morel@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": "Notifications",
+   "contenu": "Bonjour, je reçois une notification pour chaque commentaire, même sur les tâches où je ne suis qu'observatrice. Serait-il possible de recevoir un récapitulatif une fois par jour ?"
+  },
+  {
+   "id": "FB-017",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-30T14:12",
+   "auteur": "Lucas Bernard",
+   "email": "lucas.bernard@datapulse.fr",
+   "entreprise": "DataPulse",
+   "objet": null,
+   "contenu": "Intégration GitLab svp ! GitHub c'est bien, mais tout le monde n'est pas dessus."
+  },
+  {
+   "id": "FB-018",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-30T16:45",
+   "auteur": "Chloé Dumas",
+   "email": "chloe.dumas@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": "Vue calendrier",
+   "contenu": "La vue calendrier d'Orbiteam est pratique, mais on voudrait retrouver les jalons dans Outlook ou Google Agenda. Aujourd'hui je les recopie à la main dans l'agenda partagé."
+  },
+  {
+   "id": "FB-019",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-31T08:30",
+   "auteur": "Growth Agency",
+   "email": "contact@growthagency.com",
+   "entreprise": "Growth Agency",
+   "objet": "Boostez votre visibilité !",
+   "contenu": "Bonjour, nous avons analysé votre site : votre référencement peut progresser de 300 %. Offre spéciale -50 % ce mois-ci, répondez à ce mail pour un audit gratuit."
+  },
+  {
+   "id": "FB-020",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-31T11:15",
+   "auteur": "Benoît Leroy",
+   "email": "benoit.leroy@leroyassocies.fr",
+   "entreprise": "Leroy Associés",
+   "objet": "Export temps passé",
+   "contenu": "Pour facturer nos clients, il nous faut le détail des heures par collaborateur et par dossier. L'export actuel ne donne qu'un total par projet."
+  },
+  {
+   "id": "FB-021",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-03T09:30",
+   "auteur": "Isabelle Fournier",
+   "email": "isabelle.fournier@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Re: Export PDF",
+   "contenu": "Toujours aucune nouvelle sur l'export PDF ? Notre comité de direction se réunit tous les mois et nous refaisons les supports à la main à chaque fois."
+  },
+  {
+   "id": "FB-022",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-04T12:00",
+   "auteur": "Manon Girard",
+   "email": "manon.girard@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": null,
+   "contenu": "Comment je fais pour inviter un prestataire externe sur un seul projet sans qu'il voie tout le reste ?"
+  },
+  {
+   "id": "FB-023",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-04T15:40",
+   "auteur": "Antoine Vidal",
+   "email": "antoine.vidal@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": "Dépendances Gantt",
+   "contenu": "Comme mon collègue l'a signalé : sur nos plannings de chantier, relier les tâches une par une via le formulaire est très long. Un lien direct dans le Gantt nous ferait gagner beaucoup de temps."
+  },
+  {
+   "id": "FB-024",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-05T10:05",
+   "auteur": "Julien Roche",
+   "email": "julien.roche@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": "Re: Trop de mails",
+   "contenu": "Petite relance : on a fini par désactiver toutes les notifications email dans l'équipe. Résultat, on a raté une échéance client la semaine dernière."
+  },
+  {
+   "id": "FB-025",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-05T17:20",
+   "auteur": "Yasmine Haddad",
+   "email": "yasmine.haddad@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Possible de filtrer les notifs ? Je veux juste les mentions et les tâches qui me sont assignées."
+  },
+  {
+   "id": "FB-026",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-06T09:10",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Re: Lenteurs sur le Kanban",
+   "contenu": "Ça empire : depuis qu'on a importé l'historique 2025, le Kanban met plus de 15 secondes à charger et Chrome affiche parfois « la page ne répond pas »."
+  },
+  {
+   "id": "FB-027",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-06T14:25",
+   "auteur": "Lucas Bernard",
+   "email": "lucas.bernard@datapulse.fr",
+   "entreprise": "DataPulse",
+   "objet": "GitLab",
+   "contenu": "Nos équipes ont commencé à tester un autre outil qui s'intègre nativement à GitLab. Je préférerais rester sur Orbiteam : avez-vous une date pour l'intégration ?"
+  },
+  {
+   "id": "FB-028",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-07T11:00",
+   "auteur": "Jérémy Faure",
+   "email": "jeremy.faure@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Synchro avec Google Agenda svp, je loupe toutes mes deadlines."
+  },
+  {
+   "id": "FB-029",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-08T20:15",
+   "auteur": "Nico_Pm",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Depuis la mise à jour 3.8, l'appli plante dès que j'ouvre une tâche avec des pièces jointes. Inutilisable sur mon Samsung."
+  },
+  {
+   "id": "FB-030",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-10T08:42",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Connexion SSO impossible",
+   "contenu": "Depuis ce matin, une partie de nos utilisateurs ne peut plus se connecter via notre SSO Azure AD : message « SAML response invalid ». 30 personnes bloquées. Urgent."
+  },
+  {
+   "id": "FB-031",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-10T09:15",
+   "auteur": "Fatima Ouali",
+   "email": "fatima.ouali@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Erreur SAML",
+   "contenu": "Erreur « SAML response invalid » pour tous nos comptes depuis la mise à jour d'hier soir. Plus personne ne peut accéder aux projets."
+  },
+  {
+   "id": "FB-032",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-10T10:02",
+   "auteur": "Sophie Laurent",
+   "email": "sophie.laurent@cabinetverdierconseil.fr",
+   "entreprise": "Cabinet Verdier Conseil",
+   "objet": "Impossible de me connecter",
+   "contenu": "Bonjour, je n'arrive plus à me connecter : la page de connexion me renvoie vers le portail de mon entreprise puis affiche une erreur. J'ai un comité ce matin, pouvez-vous m'aider rapidement ?"
+  },
+  {
+   "id": "FB-033",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-10T19:30",
+   "auteur": "Léa R.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Crash systématique à l'ouverture d'une tâche depuis la dernière version. Android 14."
+  },
+  {
+   "id": "FB-034",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-11T09:20",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Re: Connexion SSO impossible",
+   "contenu": "Toujours bloqués ce matin. Si ce n'est pas résolu d'ici vendredi, la direction m'a demandé d'étudier une solution alternative."
+  },
+  {
+   "id": "FB-035",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-11T14:10",
+   "auteur": "Élodie Simon",
+   "email": "elodie.simon@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": "Export PDF client",
+   "contenu": "Bonjour, j'ai un rendez-vous client demain et l'export PDF de mon planning sort encore avec les tâches coupées. Existe-t-il un réglage pour passer en paysage ou tout faire tenir sur une page ?"
+  },
+  {
+   "id": "FB-036",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-12T08:50",
+   "auteur": "Karim Mansour",
+   "email": "karim.mansour@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "SSO Okta",
+   "contenu": "Nos utilisateurs Okta sont déconnectés toutes les 10 minutes depuis le 10/11 et doivent se réauthentifier. Très pénible au quotidien."
+  },
+  {
+   "id": "FB-037",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-12T12:40",
+   "auteur": "Bastien",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "L'app mobile se ferme toute seule quand je veux voir une tâche. Je suis repassé sur le navigateur du téléphone."
+  },
+  {
+   "id": "FB-038",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-12T16:05",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Kanban + connexion",
+   "contenu": "Deux sujets : la connexion SSO a été rétablie de notre côté, mais avec des déconnexions fréquentes. Et le Kanban reste très lent sur notre gros projet : l'équipe commence à retourner sur des tableurs."
+  },
+  {
+   "id": "FB-039",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-13T09:00",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Merge requests",
+   "contenu": "Je relance pour l'intégration GitLab. Notre renouvellement est dans 6 semaines."
+  },
+  {
+   "id": "FB-040",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-13T11:30",
+   "auteur": "Céline Arnaud",
+   "email": "celine.arnaud@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": null,
+   "contenu": "Ce serait génial d'avoir les tâches dans mon agenda Google."
+  },
+  {
+   "id": "FB-041",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-13T15:15",
+   "auteur": "Hélène Roux",
+   "email": "helene.roux@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Déconnexions",
+   "contenu": "Nous sommes déconnectés plusieurs fois par heure depuis le début de la semaine. Est-ce lié à votre mise à jour ?"
+  },
+  {
+   "id": "FB-042",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-14T08:20",
+   "auteur": "Mehdi K.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "1 étoile. Crash à chaque fois. Réparez svp."
+  },
+  {
+   "id": "FB-043",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-14T10:45",
+   "auteur": "Laurent Chevalier",
+   "email": "laurent.chevalier@conseilco.fr",
+   "entreprise": "Conseil & Co",
+   "objet": "Export heures",
+   "contenu": "Nous clôturons le mois : toujours aucun moyen d'exporter les temps par client. Nos consultants y passent une demi-journée."
+  },
+  {
+   "id": "FB-044",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-14T13:00",
+   "auteur": "Antoine Vidal",
+   "email": "antoine.vidal@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": "Kanban lent",
+   "contenu": "Sur le projet « Résidence Les Tilleuls », le Kanban est très lent à charger."
+  },
+  {
+   "id": "FB-045",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-14T17:45",
+   "auteur": "Romain Petit",
+   "email": "romain.petit@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Le PDF du planning, c'est vraiment pas pro. On peut avoir un export qui tient sur une page A3 ?"
+  },
+  {
+   "id": "FB-046",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-15T09:30",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Escalade SSO",
+   "contenu": "Nous avons perdu 2 jours de travail sur 30 personnes. J'attends un retour écrit sur la cause de l'incident et les mesures prises pour qu'il ne se reproduise pas."
+  },
+  {
+   "id": "FB-047",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-15T21:10",
+   "auteur": "Julie P.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Plantage dès que j'ouvre une tâche avec une photo jointe."
+  },
+  {
+   "id": "FB-048",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-16T10:00",
+   "auteur": "Amélie Perrin",
+   "email": "amelie.perrin@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Merci !",
+   "contenu": "Merci pour la nouvelle vue tableau, l'équipe événementiel l'a adoptée en une semaine !"
+  },
+  {
+   "id": "FB-049",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-16T14:30",
+   "auteur": "Victor Blanc",
+   "email": "victor.blanc@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": null,
+   "contenu": "Vous pourriez ajouter un CRM pour suivre nos prospects directement dans Orbiteam ?"
+  },
+  {
+   "id": "FB-050",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-16T16:20",
+   "auteur": "Nadia Benali",
+   "email": "nadia.benali@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": "Mot de passe",
+   "contenu": "Je n'ai pas reçu l'email de réinitialisation de mot de passe. Pouvez-vous vérifier ?"
+  }
+ ],
+ "feedbacks_index": {
+  "FB-001": {
+   "id": "FB-001",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-20T09:12",
+   "auteur": "Claire Martin",
+   "email": "claire.martin@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": null,
+   "contenu": "Super la nouvelle vue tableau, on gagne vraiment du temps en réunion d'équipe. Merci !"
+  },
+  "FB-002": {
+   "id": "FB-002",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-20T14:40",
+   "auteur": "Julien Roche",
+   "email": "julien.roche@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": "Trop de mails",
+   "contenu": "Bonjour, depuis qu'on a ajouté toute l'équipe sur le projet de refonte, je reçois plus de 80 notifications par jour. Chaque commentaire, chaque changement de statut... Je finis par tout ignorer, y compris les choses importantes. Est-ce qu'il existe un résumé quotidien ? Sinon je vais désactiver les notifications complètement."
+  },
+  "FB-003": {
+   "id": "FB-003",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-21T10:05",
+   "auteur": "Sophie Laurent",
+   "email": "sophie.laurent@cabinetverdierconseil.fr",
+   "entreprise": "Cabinet Verdier Conseil",
+   "objet": "Export PDF du planning illisible",
+   "contenu": "Quand j'exporte le planning d'un projet en PDF pour l'envoyer à mon client, les noms des tâches sont tronqués et le diagramme est coupé sur plusieurs pages sans légende. Je dois refaire le document à la main sous PowerPoint avant chaque comité de pilotage, ça me prend une heure à chaque fois."
+  },
+  "FB-004": {
+   "id": "FB-004",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-22T09:30",
+   "auteur": "Marc Dubreuil",
+   "email": "marc.dubreuil@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": null,
+   "contenu": "Il faudrait pouvoir créer les dépendances entre tâches directement en tirant une flèche d'une barre à l'autre dans le Gantt, comme dans MS Project. Là il faut passer par le panneau de détail de la tâche, c'est laborieux quand on a 200 tâches."
+  },
+  "FB-005": {
+   "id": "FB-005",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-22T11:20",
+   "auteur": "Nadia Benali",
+   "email": "nadia.benali@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": "Question facture",
+   "contenu": "Bonjour, pouvez-vous m'envoyer la facture du mois de septembre avec notre numéro de TVA intracommunautaire ? Merci."
+  },
+  "FB-006": {
+   "id": "FB-006",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-23T09:47",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Intégration GitLab ?",
+   "contenu": "Nous utilisons GitLab auto-hébergé. Est-il prévu de lier les merge requests aux tâches Orbiteam, comme vous le faites avec GitHub ? Aujourd'hui nos développeurs continuent de suivre leur travail dans les issues GitLab et ne mettent pas Orbiteam à jour : les chefs de projet n'ont donc pas une vision fiable de l'avancement."
+  },
+  "FB-007": {
+   "id": "FB-007",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-23T17:02",
+   "auteur": "Isabelle Fournier",
+   "email": "isabelle.fournier@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Export PDF",
+   "contenu": "Les exports PDF ne respectent pas notre charte : pas de logo, police par défaut, et le tableau des jalons déborde de la page. Notre comité de direction exige un format propre, on ne peut pas lui présenter ça."
+  },
+  "FB-008": {
+   "id": "FB-008",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-24T08:55",
+   "auteur": "Kevin Lambert",
+   "email": "kevin.lambert@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": null,
+   "contenu": "Les notifs par mail c'est l'enfer, on ne peut pas juste choisir quels événements on veut recevoir ?"
+  },
+  "FB-009": {
+   "id": "FB-009",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-24T13:30",
+   "auteur": "Amélie Perrin",
+   "email": "amelie.perrin@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Synchronisation calendrier",
+   "contenu": "Est-ce que les échéances des tâches peuvent apparaître dans Google Agenda ? Toute notre équipe vit dans son agenda, et les deadlines Orbiteam passent inaperçues. Si c'était possible, on étendrait Orbiteam au service commercial (15 personnes de plus)."
+  },
+  "FB-010": {
+   "id": "FB-010",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-25T10:10",
+   "auteur": "Laurent Chevalier",
+   "email": "laurent.chevalier@conseilco.fr",
+   "entreprise": "Conseil & Co",
+   "objet": "Suivi du temps pour la facturation",
+   "contenu": "Nous facturons nos clients au temps passé. Le suivi du temps d'Orbiteam est pratique, mais impossible d'exporter les heures par client et par mois dans un format exploitable par notre logiciel de facturation. On fait des copier-coller depuis l'écran. Un export CSV filtrable suffirait."
+  },
+  "FB-011": {
+   "id": "FB-011",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-27T15:20",
+   "auteur": "Hugo Martin",
+   "email": "hugo.martin@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": null,
+   "contenu": "Est-ce qu'Orbiteam pourrait gérer les fiches de paie et les congés de l'équipe ? Ce serait top d'avoir tout au même endroit."
+  },
+  "FB-012": {
+   "id": "FB-012",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-28T09:15",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Lenteurs sur le Kanban",
+   "contenu": "Sur notre projet principal (environ 1 500 cartes), le tableau Kanban met 8 à 10 secondes à s'afficher et chaque déplacement de carte rame. Sur les petits projets, aucun souci."
+  },
+  "FB-013": {
+   "id": "FB-013",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-28T11:42",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Re: Intégration GitLab ?",
+   "contenu": "Je reviens vers vous : notre CTO hésite à renouveler les 40 licences de l'équipe tech en janvier si on ne peut pas relier Orbiteam à GitLab. Les développeurs considèrent que c'est une double saisie inutile."
+  },
+  "FB-014": {
+   "id": "FB-014",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-29T09:03",
+   "auteur": "Élodie Simon",
+   "email": "elodie.simon@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": null,
+   "contenu": "Le PDF du Gantt coupe les barres en plein milieu entre deux pages. Pas présentable."
+  },
+  "FB-015": {
+   "id": "FB-015",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-29T10:20",
+   "auteur": "Romain Petit",
+   "email": "romain.petit@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": "Dépendances dans le Gantt",
+   "contenu": "Créer une dépendance demande 5 clics. Un glisser-déposer entre les barres serait bien plus naturel."
+  },
+  "FB-016": {
+   "id": "FB-016",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-30T09:00",
+   "auteur": "Sarah Morel",
+   "email": "sarah.morel@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": "Notifications",
+   "contenu": "Bonjour, je reçois une notification pour chaque commentaire, même sur les tâches où je ne suis qu'observatrice. Serait-il possible de recevoir un récapitulatif une fois par jour ?"
+  },
+  "FB-017": {
+   "id": "FB-017",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-10-30T14:12",
+   "auteur": "Lucas Bernard",
+   "email": "lucas.bernard@datapulse.fr",
+   "entreprise": "DataPulse",
+   "objet": null,
+   "contenu": "Intégration GitLab svp ! GitHub c'est bien, mais tout le monde n'est pas dessus."
+  },
+  "FB-018": {
+   "id": "FB-018",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-10-30T16:45",
+   "auteur": "Chloé Dumas",
+   "email": "chloe.dumas@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": "Vue calendrier",
+   "contenu": "La vue calendrier d'Orbiteam est pratique, mais on voudrait retrouver les jalons dans Outlook ou Google Agenda. Aujourd'hui je les recopie à la main dans l'agenda partagé."
+  },
+  "FB-019": {
+   "id": "FB-019",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-31T08:30",
+   "auteur": "Growth Agency",
+   "email": "contact@growthagency.com",
+   "entreprise": "Growth Agency",
+   "objet": "Boostez votre visibilité !",
+   "contenu": "Bonjour, nous avons analysé votre site : votre référencement peut progresser de 300 %. Offre spéciale -50 % ce mois-ci, répondez à ce mail pour un audit gratuit."
+  },
+  "FB-020": {
+   "id": "FB-020",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-10-31T11:15",
+   "auteur": "Benoît Leroy",
+   "email": "benoit.leroy@leroyassocies.fr",
+   "entreprise": "Leroy Associés",
+   "objet": "Export temps passé",
+   "contenu": "Pour facturer nos clients, il nous faut le détail des heures par collaborateur et par dossier. L'export actuel ne donne qu'un total par projet."
+  },
+  "FB-021": {
+   "id": "FB-021",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-03T09:30",
+   "auteur": "Isabelle Fournier",
+   "email": "isabelle.fournier@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Re: Export PDF",
+   "contenu": "Toujours aucune nouvelle sur l'export PDF ? Notre comité de direction se réunit tous les mois et nous refaisons les supports à la main à chaque fois."
+  },
+  "FB-022": {
+   "id": "FB-022",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-04T12:00",
+   "auteur": "Manon Girard",
+   "email": "manon.girard@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": null,
+   "contenu": "Comment je fais pour inviter un prestataire externe sur un seul projet sans qu'il voie tout le reste ?"
+  },
+  "FB-023": {
+   "id": "FB-023",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-04T15:40",
+   "auteur": "Antoine Vidal",
+   "email": "antoine.vidal@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": "Dépendances Gantt",
+   "contenu": "Comme mon collègue l'a signalé : sur nos plannings de chantier, relier les tâches une par une via le formulaire est très long. Un lien direct dans le Gantt nous ferait gagner beaucoup de temps."
+  },
+  "FB-024": {
+   "id": "FB-024",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-05T10:05",
+   "auteur": "Julien Roche",
+   "email": "julien.roche@agencepixelia.fr",
+   "entreprise": "Agence Pixelia",
+   "objet": "Re: Trop de mails",
+   "contenu": "Petite relance : on a fini par désactiver toutes les notifications email dans l'équipe. Résultat, on a raté une échéance client la semaine dernière."
+  },
+  "FB-025": {
+   "id": "FB-025",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-05T17:20",
+   "auteur": "Yasmine Haddad",
+   "email": "yasmine.haddad@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Possible de filtrer les notifs ? Je veux juste les mentions et les tâches qui me sont assignées."
+  },
+  "FB-026": {
+   "id": "FB-026",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-06T09:10",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Re: Lenteurs sur le Kanban",
+   "contenu": "Ça empire : depuis qu'on a importé l'historique 2025, le Kanban met plus de 15 secondes à charger et Chrome affiche parfois « la page ne répond pas »."
+  },
+  "FB-027": {
+   "id": "FB-027",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-06T14:25",
+   "auteur": "Lucas Bernard",
+   "email": "lucas.bernard@datapulse.fr",
+   "entreprise": "DataPulse",
+   "objet": "GitLab",
+   "contenu": "Nos équipes ont commencé à tester un autre outil qui s'intègre nativement à GitLab. Je préférerais rester sur Orbiteam : avez-vous une date pour l'intégration ?"
+  },
+  "FB-028": {
+   "id": "FB-028",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-07T11:00",
+   "auteur": "Jérémy Faure",
+   "email": "jeremy.faure@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Synchro avec Google Agenda svp, je loupe toutes mes deadlines."
+  },
+  "FB-029": {
+   "id": "FB-029",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-08T20:15",
+   "auteur": "Nico_Pm",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Depuis la mise à jour 3.8, l'appli plante dès que j'ouvre une tâche avec des pièces jointes. Inutilisable sur mon Samsung."
+  },
+  "FB-030": {
+   "id": "FB-030",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-10T08:42",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Connexion SSO impossible",
+   "contenu": "Depuis ce matin, une partie de nos utilisateurs ne peut plus se connecter via notre SSO Azure AD : message « SAML response invalid ». 30 personnes bloquées. Urgent."
+  },
+  "FB-031": {
+   "id": "FB-031",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-10T09:15",
+   "auteur": "Fatima Ouali",
+   "email": "fatima.ouali@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Erreur SAML",
+   "contenu": "Erreur « SAML response invalid » pour tous nos comptes depuis la mise à jour d'hier soir. Plus personne ne peut accéder aux projets."
+  },
+  "FB-032": {
+   "id": "FB-032",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-10T10:02",
+   "auteur": "Sophie Laurent",
+   "email": "sophie.laurent@cabinetverdierconseil.fr",
+   "entreprise": "Cabinet Verdier Conseil",
+   "objet": "Impossible de me connecter",
+   "contenu": "Bonjour, je n'arrive plus à me connecter : la page de connexion me renvoie vers le portail de mon entreprise puis affiche une erreur. J'ai un comité ce matin, pouvez-vous m'aider rapidement ?"
+  },
+  "FB-033": {
+   "id": "FB-033",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-10T19:30",
+   "auteur": "Léa R.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Crash systématique à l'ouverture d'une tâche depuis la dernière version. Android 14."
+  },
+  "FB-034": {
+   "id": "FB-034",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-11T09:20",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Re: Connexion SSO impossible",
+   "contenu": "Toujours bloqués ce matin. Si ce n'est pas résolu d'ici vendredi, la direction m'a demandé d'étudier une solution alternative."
+  },
+  "FB-035": {
+   "id": "FB-035",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-11T14:10",
+   "auteur": "Élodie Simon",
+   "email": "elodie.simon@ateliernord.fr",
+   "entreprise": "Atelier Nord",
+   "objet": "Export PDF client",
+   "contenu": "Bonjour, j'ai un rendez-vous client demain et l'export PDF de mon planning sort encore avec les tâches coupées. Existe-t-il un réglage pour passer en paysage ou tout faire tenir sur une page ?"
+  },
+  "FB-036": {
+   "id": "FB-036",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-12T08:50",
+   "auteur": "Karim Mansour",
+   "email": "karim.mansour@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "SSO Okta",
+   "contenu": "Nos utilisateurs Okta sont déconnectés toutes les 10 minutes depuis le 10/11 et doivent se réauthentifier. Très pénible au quotidien."
+  },
+  "FB-037": {
+   "id": "FB-037",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-12T12:40",
+   "auteur": "Bastien",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "L'app mobile se ferme toute seule quand je veux voir une tâche. Je suis repassé sur le navigateur du téléphone."
+  },
+  "FB-038": {
+   "id": "FB-038",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-12T16:05",
+   "auteur": "Pauline Robert",
+   "email": "pauline.robert@verdance.fr",
+   "entreprise": "Verdance",
+   "objet": "Kanban + connexion",
+   "contenu": "Deux sujets : la connexion SSO a été rétablie de notre côté, mais avec des déconnexions fréquentes. Et le Kanban reste très lent sur notre gros projet : l'équipe commence à retourner sur des tableurs."
+  },
+  "FB-039": {
+   "id": "FB-039",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-13T09:00",
+   "auteur": "Thomas Garnier",
+   "email": "thomas.garnier@devnest.fr",
+   "entreprise": "DevNest",
+   "objet": "Merge requests",
+   "contenu": "Je relance pour l'intégration GitLab. Notre renouvellement est dans 6 semaines."
+  },
+  "FB-040": {
+   "id": "FB-040",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-13T11:30",
+   "auteur": "Céline Arnaud",
+   "email": "celine.arnaud@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": null,
+   "contenu": "Ce serait génial d'avoir les tâches dans mon agenda Google."
+  },
+  "FB-041": {
+   "id": "FB-041",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-13T15:15",
+   "auteur": "Hélène Roux",
+   "email": "helene.roux@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Déconnexions",
+   "contenu": "Nous sommes déconnectés plusieurs fois par heure depuis le début de la semaine. Est-ce lié à votre mise à jour ?"
+  },
+  "FB-042": {
+   "id": "FB-042",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-14T08:20",
+   "auteur": "Mehdi K.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "1 étoile. Crash à chaque fois. Réparez svp."
+  },
+  "FB-043": {
+   "id": "FB-043",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-14T10:45",
+   "auteur": "Laurent Chevalier",
+   "email": "laurent.chevalier@conseilco.fr",
+   "entreprise": "Conseil & Co",
+   "objet": "Export heures",
+   "contenu": "Nous clôturons le mois : toujours aucun moyen d'exporter les temps par client. Nos consultants y passent une demi-journée."
+  },
+  "FB-044": {
+   "id": "FB-044",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-14T13:00",
+   "auteur": "Antoine Vidal",
+   "email": "antoine.vidal@batiplan.fr",
+   "entreprise": "Batiplan",
+   "objet": "Kanban lent",
+   "contenu": "Sur le projet « Résidence Les Tilleuls », le Kanban est très lent à charger."
+  },
+  "FB-045": {
+   "id": "FB-045",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-14T17:45",
+   "auteur": "Romain Petit",
+   "email": "romain.petit@kodamalabs.fr",
+   "entreprise": "Kodama Labs",
+   "objet": null,
+   "contenu": "Le PDF du planning, c'est vraiment pas pro. On peut avoir un export qui tient sur une page A3 ?"
+  },
+  "FB-046": {
+   "id": "FB-046",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-15T09:30",
+   "auteur": "Mathieu Collin",
+   "email": "mathieu.collin@groupealtimea.fr",
+   "entreprise": "Groupe Altimea",
+   "objet": "Escalade SSO",
+   "contenu": "Nous avons perdu 2 jours de travail sur 30 personnes. J'attends un retour écrit sur la cause de l'incident et les mesures prises pour qu'il ne se reproduise pas."
+  },
+  "FB-047": {
+   "id": "FB-047",
+   "canal": "commentaire",
+   "source": "Avis Play Store",
+   "date": "2026-11-15T21:10",
+   "auteur": "Julie P.",
+   "email": null,
+   "entreprise": null,
+   "objet": null,
+   "contenu": "Plantage dès que j'ouvre une tâche avec une photo jointe."
+  },
+  "FB-048": {
+   "id": "FB-048",
+   "canal": "email",
+   "source": "Email support",
+   "date": "2026-11-16T10:00",
+   "auteur": "Amélie Perrin",
+   "email": "amelie.perrin@fabrikevenements.fr",
+   "entreprise": "Fabrik Événements",
+   "objet": "Merci !",
+   "contenu": "Merci pour la nouvelle vue tableau, l'équipe événementiel l'a adoptée en une semaine !"
+  },
+  "FB-049": {
+   "id": "FB-049",
+   "canal": "commentaire",
+   "source": "Commentaire in-app",
+   "date": "2026-11-16T14:30",
+   "auteur": "Victor Blanc",
+   "email": "victor.blanc@agencelumen.fr",
+   "entreprise": "Agence Lumen",
+   "objet": null,
+   "contenu": "Vous pourriez ajouter un CRM pour suivre nos prospects directement dans Orbiteam ?"
+  },
+  "FB-050": {
+   "id": "FB-050",
+   "canal": "ticket",
+   "source": "Ticket support",
+   "date": "2026-11-16T16:20",
+   "auteur": "Nadia Benali",
+   "email": "nadia.benali@studiokanso.fr",
+   "entreprise": "Studio Kanso",
+   "objet": "Mot de passe",
+   "contenu": "Je n'ai pas reçu l'email de réinitialisation de mot de passe. Pouvez-vous vérifier ?"
+  }
+ },
+ "alertes": [],
+ "user_stories": {},
+ "fiches": {
+  "FB-001": {
+   "id": "FB-001",
+   "categorie": "Non actionnable",
+   "demandes": [],
+   "justification": "test"
+  },
+  "FB-002": {
+   "id": "FB-002",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T6",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-003": {
+   "id": "FB-003",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-004": {
+   "id": "FB-004",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T5",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-005": {
+   "id": "FB-005",
+   "categorie": "Question/Support",
+   "demandes": [],
+   "justification": "test"
+  },
+  "FB-006": {
+   "id": "FB-006",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T4",
+     "gravite": "Majeur",
+     "enjeu_business": "Adoption",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-007": {
+   "id": "FB-007",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-008": {
+   "id": "FB-008",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T6",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-009": {
+   "id": "FB-009",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T7",
+     "gravite": "Mineur",
+     "enjeu_business": "Expansion",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-010": {
+   "id": "FB-010",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T9",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-011": {
+   "id": "FB-011",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème HV",
+     "gravite": "Mineur",
+     "enjeu_business": "Expansion",
+     "hors_vision": true
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-012": {
+   "id": "FB-012",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T8",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-013": {
+   "id": "FB-013",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T4",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-014": {
+   "id": "FB-014",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-015": {
+   "id": "FB-015",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T5",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-016": {
+   "id": "FB-016",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T6",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-017": {
+   "id": "FB-017",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T4",
+     "gravite": "Mineur",
+     "enjeu_business": "Adoption",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-018": {
+   "id": "FB-018",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T7",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-019": {
+   "id": "FB-019",
+   "categorie": "Non actionnable",
+   "demandes": [],
+   "justification": "test"
+  },
+  "FB-020": {
+   "id": "FB-020",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T9",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-021": {
+   "id": "FB-021",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-022": {
+   "id": "FB-022",
+   "categorie": "Question/Support",
+   "demandes": [],
+   "justification": "test"
+  },
+  "FB-023": {
+   "id": "FB-023",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T5",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-024": {
+   "id": "FB-024",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T6",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-025": {
+   "id": "FB-025",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T6",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-026": {
+   "id": "FB-026",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T8",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-027": {
+   "id": "FB-027",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T4",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-028": {
+   "id": "FB-028",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T7",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-029": {
+   "id": "FB-029",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T3",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-030": {
+   "id": "FB-030",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-031": {
+   "id": "FB-031",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-032": {
+   "id": "FB-032",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-033": {
+   "id": "FB-033",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T3",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-034": {
+   "id": "FB-034",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-035": {
+   "id": "FB-035",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-036": {
+   "id": "FB-036",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-037": {
+   "id": "FB-037",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T3",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-038": {
+   "id": "FB-038",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    },
+    {
+     "probleme": "Problème T8",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-039": {
+   "id": "FB-039",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T4",
+     "gravite": "Majeur",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-040": {
+   "id": "FB-040",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T7",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-041": {
+   "id": "FB-041",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-042": {
+   "id": "FB-042",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T3",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-043": {
+   "id": "FB-043",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème T9",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-044": {
+   "id": "FB-044",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T8",
+     "gravite": "Majeur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-045": {
+   "id": "FB-045",
+   "categorie": "UX/Utilisabilité",
+   "demandes": [
+    {
+     "probleme": "Problème T1",
+     "gravite": "Mineur",
+     "enjeu_business": "Efficacité",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-046": {
+   "id": "FB-046",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T2",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-047": {
+   "id": "FB-047",
+   "categorie": "Bug",
+   "demandes": [
+    {
+     "probleme": "Problème T3",
+     "gravite": "Bloquant",
+     "enjeu_business": "Rétention",
+     "hors_vision": false
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-048": {
+   "id": "FB-048",
+   "categorie": "Non actionnable",
+   "demandes": [],
+   "justification": "test"
+  },
+  "FB-049": {
+   "id": "FB-049",
+   "categorie": "Demande de fonctionnalité",
+   "demandes": [
+    {
+     "probleme": "Problème HV",
+     "gravite": "Mineur",
+     "enjeu_business": "Expansion",
+     "hors_vision": true
+    }
+   ],
+   "justification": "test"
+  },
+  "FB-050": {
+   "id": "FB-050",
+   "categorie": "Question/Support",
+   "demandes": [],
+   "justification": "test"
+  }
+ },
+ "ecartes": [
+  "FB-001",
+  "FB-005",
+  "FB-019",
+  "FB-022",
+  "FB-048",
+  "FB-050"
+ ],
+ "demandes": {
+  "FB-002#1": {
+   "probleme": "Problème T6",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-002"
+  },
+  "FB-003#1": {
+   "probleme": "Problème T1",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-003"
+  },
+  "FB-004#1": {
+   "probleme": "Problème T5",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-004"
+  },
+  "FB-006#1": {
+   "probleme": "Problème T4",
+   "gravite": "Majeur",
+   "enjeu_business": "Adoption",
+   "hors_vision": false,
+   "feedback_id": "FB-006"
+  },
+  "FB-007#1": {
+   "probleme": "Problème T1",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-007"
+  },
+  "FB-008#1": {
+   "probleme": "Problème T6",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-008"
+  },
+  "FB-009#1": {
+   "probleme": "Problème T7",
+   "gravite": "Mineur",
+   "enjeu_business": "Expansion",
+   "hors_vision": false,
+   "feedback_id": "FB-009"
+  },
+  "FB-010#1": {
+   "probleme": "Problème T9",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-010"
+  },
+  "FB-011#1": {
+   "probleme": "Problème HV",
+   "gravite": "Mineur",
+   "enjeu_business": "Expansion",
+   "hors_vision": true,
+   "feedback_id": "FB-011"
+  },
+  "FB-012#1": {
+   "probleme": "Problème T8",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-012"
+  },
+  "FB-013#1": {
+   "probleme": "Problème T4",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-013"
+  },
+  "FB-014#1": {
+   "probleme": "Problème T1",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-014"
+  },
+  "FB-015#1": {
+   "probleme": "Problème T5",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-015"
+  },
+  "FB-016#1": {
+   "probleme": "Problème T6",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-016"
+  },
+  "FB-017#1": {
+   "probleme": "Problème T4",
+   "gravite": "Mineur",
+   "enjeu_business": "Adoption",
+   "hors_vision": false,
+   "feedback_id": "FB-017"
+  },
+  "FB-018#1": {
+   "probleme": "Problème T7",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-018"
+  },
+  "FB-020#1": {
+   "probleme": "Problème T9",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-020"
+  },
+  "FB-021#1": {
+   "probleme": "Problème T1",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-021"
+  },
+  "FB-023#1": {
+   "probleme": "Problème T5",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-023"
+  },
+  "FB-024#1": {
+   "probleme": "Problème T6",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-024"
+  },
+  "FB-025#1": {
+   "probleme": "Problème T6",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-025"
+  },
+  "FB-026#1": {
+   "probleme": "Problème T8",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-026"
+  },
+  "FB-027#1": {
+   "probleme": "Problème T4",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-027"
+  },
+  "FB-028#1": {
+   "probleme": "Problème T7",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-028"
+  },
+  "FB-029#1": {
+   "probleme": "Problème T3",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-029"
+  },
+  "FB-030#1": {
+   "probleme": "Problème T2",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-030"
+  },
+  "FB-031#1": {
+   "probleme": "Problème T2",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-031"
+  },
+  "FB-032#1": {
+   "probleme": "Problème T2",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-032"
+  },
+  "FB-033#1": {
+   "probleme": "Problème T3",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-033"
+  },
+  "FB-034#1": {
+   "probleme": "Problème T2",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-034"
+  },
+  "FB-035#1": {
+   "probleme": "Problème T1",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-035"
+  },
+  "FB-036#1": {
+   "probleme": "Problème T2",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-036"
+  },
+  "FB-037#1": {
+   "probleme": "Problème T3",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-037"
+  },
+  "FB-038#1": {
+   "probleme": "Problème T2",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-038"
+  },
+  "FB-038#2": {
+   "probleme": "Problème T8",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-038"
+  },
+  "FB-039#1": {
+   "probleme": "Problème T4",
+   "gravite": "Majeur",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-039"
+  },
+  "FB-040#1": {
+   "probleme": "Problème T7",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-040"
+  },
+  "FB-041#1": {
+   "probleme": "Problème T2",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-041"
+  },
+  "FB-042#1": {
+   "probleme": "Problème T3",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-042"
+  },
+  "FB-043#1": {
+   "probleme": "Problème T9",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-043"
+  },
+  "FB-044#1": {
+   "probleme": "Problème T8",
+   "gravite": "Majeur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-044"
+  },
+  "FB-045#1": {
+   "probleme": "Problème T1",
+   "gravite": "Mineur",
+   "enjeu_business": "Efficacité",
+   "hors_vision": false,
+   "feedback_id": "FB-045"
+  },
+  "FB-046#1": {
+   "probleme": "Problème T2",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-046"
+  },
+  "FB-047#1": {
+   "probleme": "Problème T3",
+   "gravite": "Bloquant",
+   "enjeu_business": "Rétention",
+   "hors_vision": false,
+   "feedback_id": "FB-047"
+  },
+  "FB-049#1": {
+   "probleme": "Problème HV",
+   "gravite": "Mineur",
+   "enjeu_business": "Expansion",
+   "hors_vision": true,
+   "feedback_id": "FB-049"
+  }
+ },
+ "themes": [
+  {
+   "titre": "Trop de notifications email, besoin de résumé ou de filtres",
+   "description": "",
+   "demandes": [
+    "FB-002#1",
+    "FB-008#1",
+    "FB-016#1",
+    "FB-024#1",
+    "FB-025#1"
+   ],
+   "backlog_id": "BL-104",
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-1"
+  },
+  {
+   "titre": "Export PDF du planning inexploitable (mise en page, pagination, charte)",
+   "description": "",
+   "demandes": [
+    "FB-003#1",
+    "FB-007#1",
+    "FB-014#1",
+    "FB-021#1",
+    "FB-035#1",
+    "FB-045#1"
+   ],
+   "backlog_id": "BL-101",
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-2"
+  },
+  {
+   "titre": "Création de dépendances par glisser-déposer dans le Gantt",
+   "description": "",
+   "demandes": [
+    "FB-004#1",
+    "FB-015#1",
+    "FB-023#1"
+   ],
+   "backlog_id": "BL-103",
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-3"
+  },
+  {
+   "titre": "Intégration GitLab (liaison merge requests / tâches)",
+   "description": "",
+   "demandes": [
+    "FB-006#1",
+    "FB-013#1",
+    "FB-017#1",
+    "FB-027#1",
+    "FB-039#1"
+   ],
+   "backlog_id": "BL-102",
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-4"
+  },
+  {
+   "titre": "Synchronisation des échéances avec Google Agenda / Outlook",
+   "description": "",
+   "demandes": [
+    "FB-009#1",
+    "FB-018#1",
+    "FB-028#1",
+    "FB-040#1"
+   ],
+   "backlog_id": "BL-105",
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-5"
+  },
+  {
+   "titre": "Export détaillé des temps passés pour la facturation",
+   "description": "",
+   "demandes": [
+    "FB-010#1",
+    "FB-020#1",
+    "FB-043#1"
+   ],
+   "backlog_id": null,
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-6"
+  },
+  {
+   "titre": "Demandes hors vision produit (paie, CRM)",
+   "description": "",
+   "demandes": [
+    "FB-011#1",
+    "FB-049#1"
+   ],
+   "backlog_id": null,
+   "couverture_backlog": null,
+   "hors_vision": true,
+   "justification": "test",
+   "theme_id": "TH-7"
+  },
+  {
+   "titre": "Lenteur du Kanban sur les gros projets",
+   "description": "",
+   "demandes": [
+    "FB-012#1",
+    "FB-026#1",
+    "FB-038#2",
+    "FB-044#1"
+   ],
+   "backlog_id": null,
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-8"
+  },
+  {
+   "titre": "Crash de l'application Android à l'ouverture d'une tâche (v3.8)",
+   "description": "",
+   "demandes": [
+    "FB-029#1",
+    "FB-033#1",
+    "FB-037#1",
+    "FB-042#1",
+    "FB-047#1"
+   ],
+   "backlog_id": null,
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-9"
+  },
+  {
+   "titre": "Connexion SSO en échec ou déconnexions répétées depuis la v4.2",
+   "description": "",
+   "demandes": [
+    "FB-030#1",
+    "FB-031#1",
+    "FB-032#1",
+    "FB-034#1",
+    "FB-036#1",
+    "FB-038#1",
+    "FB-041#1",
+    "FB-046#1"
+   ],
+   "backlog_id": null,
+   "couverture_backlog": null,
+   "hors_vision": false,
+   "justification": "test",
+   "theme_id": "TH-10"
+  }
+ ],
+ "estimations": {
+  "TH-1": {
+   "theme_id": "TH-1",
+   "impact": 2.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-2": {
+   "theme_id": "TH-2",
+   "impact": 2.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-3": {
+   "theme_id": "TH-3",
+   "impact": 1.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 21,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-4": {
+   "theme_id": "TH-4",
+   "impact": 2.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 13,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-5": {
+   "theme_id": "TH-5",
+   "impact": 1.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 8,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-6": {
+   "theme_id": "TH-6",
+   "impact": 2.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-8": {
+   "theme_id": "TH-8",
+   "impact": 2.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-9": {
+   "theme_id": "TH-9",
+   "impact": 3.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  },
+  "TH-10": {
+   "theme_id": "TH-10",
+   "impact": 3.0,
+   "justification_impact": "",
+   "confidence": 80,
+   "justification_confidence": "",
+   "effort": 5,
+   "justification_effort": "",
+   "hypotheses_effort": ""
+  }
+ },
+ "justifications": {
+  "TH-10": {
+   "theme_id": "TH-10",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-9": {
+   "theme_id": "TH-9",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-1": {
+   "theme_id": "TH-1",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-2": {
+   "theme_id": "TH-2",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-6": {
+   "theme_id": "TH-6",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-8": {
+   "theme_id": "TH-8",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-5": {
+   "theme_id": "TH-5",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-4": {
+   "theme_id": "TH-4",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-3": {
+   "theme_id": "TH-3",
+   "justification": "test",
+   "point_attention": ""
+  },
+  "TH-7": {
+   "theme_id": "TH-7",
+   "justification": "test",
+   "point_attention": ""
+  }
+ },
+ "justifications_signature": "[{\"capacite_sprint\": 35, \"date_reference\": \"2026-11-16\", \"horizon_should_sprints\": 1, \"periode_jours\": 7, \"poids_confidence\": 1.0, \"poids_effort\": 1.0, \"poids_impact\": 1.0, \"poids_reach\": 1.0, \"regle_bloquant_retention\": true, \"seuil_tendance\": 2}, {}]"
+}

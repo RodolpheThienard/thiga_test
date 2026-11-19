@@ -1,0 +1,13 @@
+Rang;MoSCoW;Problème;Score RICE;Reach (demandeurs);Impact;Confidence %;Effort (pts);Gravité;Enjeux;Récurrence (messages);Tendance;Backlog;Règle appliquée
+1;Must;L'application Android plante à l'ouverture d'une tâche avec pièces jointes;4.0;4;3;100;3;Bloquant;Rétention;4;En hausse (1 → 3);—;Bloquant à enjeu Rétention : Must d'office
+2;Must;Connexion SSO impossible puis déconnexions répétées depuis la v4.2;3.6;6;3;100;5;Bloquant;Rétention, Efficacité;8;Nouveau (0 → 8);—;Bloquant à enjeu Rétention : Must d'office
+3;Must;Trop de notifications email, sans choix des événements à recevoir;1.6;4;2;100;5;Majeur;Adoption, Efficacité;5;En baisse (2 → 0);BL-104;Score élevé, rentre dans la capacité du sprint
+4;Must;L'export PDF du planning n'est pas présentable (coupures, pas de logo);1.0;4;2;100;8;Majeur;Efficacité;6;Stable (1 → 2);BL-101;Score élevé, rentre dans la capacité du sprint
+5;Must;Échéances et jalons absents de Google Agenda et Outlook;1.0;4;2;100;8;Majeur;Expansion, Efficacité;4;Stable (1 → 1);BL-105;Score élevé, rentre dans la capacité du sprint
+6;Must;L'application plante systématiquement, contexte non précisé;0.75;1;3;50;2;Bloquant;Rétention;1;Nouveau (0 → 1);—;Bloquant à enjeu Rétention : Must d'office
+7;Should;Impossible d'exporter les heures par client, mois et collaborateur pour facturer;0.64;2;2;80;5;Majeur;Efficacité;3;Stable (0 → 1);BL-110;Ne rentre pas dans le sprint, rentre dans l'horizon Should
+8;Should;Le Kanban est très lent à charger sur les gros projets;0.6;3;2;80;8;Majeur;Adoption, Efficacité;5;Stable (1 → 2);—;Ne rentre pas dans le sprint, rentre dans l'horizon Should
+9;Should;Pas d'intégration GitLab : double saisie et risque de départ;0.37;2;3;80;13;Majeur;Rétention, Adoption;5;Stable (1 → 1);BL-102;Ne rentre pas dans le sprint, rentre dans l'horizon Should
+10;Could;Créer des dépendances entre tâches dans le Gantt est trop long;0.23;3;2;80;21;Majeur;Efficacité;3;Stable (1 → 0);BL-103;Au-delà de la capacité des sprints à venir
+11;Won't;Gérer les fiches de paie et les congés dans Orbiteam;0.0;1;—;—;0;Mineur;Efficacité;1;Stable (0 → 0);—;Hors vision produit
+12;Won't;Suivre ses prospects commerciaux directement dans Orbiteam;0.0;1;—;—;0;Mineur;Efficacité;1;Nouveau (0 → 1);—;Hors vision produit

@@ -1,0 +1,68 @@
+{
+  "produit": "Orbiteam",
+  "user_stories": [
+    {
+      "id": "US-001",
+      "theme": "L'application Android plante à l'ouverture d'une tâche avec pièces jointes",
+      "moscow": "Must",
+      "score_rice": 4.0,
+      "titre": "Rouvrir sans plantage les tâches avec pièces jointes sur l'application Android",
+      "story": "En tant qu'utilisateur de l'application Android Orbiteam (par exemple sur Samsung ou Android 14) qui consulte sur mobile des tâches contenant une photo ou une pièce jointe, je veux ouvrir ces tâches sans que l'application se ferme, afin de continuer à suivre mon travail depuis mon téléphone sans devoir passer par le navigateur mobile.",
+      "criteres_acceptation": [
+        {
+          "scenario": "Ouverture d'une tâche avec une photo jointe (cas nominal)",
+          "gherkin": "Scénario: Ouverture d'une tâche avec une photo jointe\n  Étant donné un utilisateur connecté à l'application Android Orbiteam v3.8 ou une version corrective\n  Et une tâche contenant une photo en pièce jointe\n  Quand l'utilisateur ouvre cette tâche\n  Alors la fiche de la tâche s'affiche avec la photo visible dans la visionneuse de pièces jointes\n  Et l'application ne se ferme pas\n  Et la fiche est affichée en moins de 3 secondes sur une connexion Wi-Fi standard"
+        },
+        {
+          "scenario": "Ouverture d'une tâche avec une pièce jointe non image",
+          "gherkin": "Scénario: Ouverture d'une tâche avec une pièce jointe de type document\n  Étant donné une tâche contenant une pièce jointe de type document (par exemple un PDF)\n  Quand l'utilisateur ouvre la tâche puis ouvre la pièce jointe dans la visionneuse\n  Alors le contenu s'affiche, ou une proposition d'ouverture dans une application externe est faite si le format n'est pas géré par la visionneuse\n  Et l'application ne se ferme pas"
+        },
+        {
+          "scenario": "Tâche sans pièce jointe (non-régression)",
+          "gherkin": "Scénario: Ouverture d'une tâche sans pièce jointe\n  Étant donné une tâche ne contenant aucune pièce jointe\n  Quand l'utilisateur ouvre cette tâche\n  Alors la fiche de la tâche s'affiche normalement\n  Et l'application ne se ferme pas"
+        },
+        {
+          "scenario": "Tâche avec de nombreuses pièces jointes ou un fichier volumineux (cas limite)",
+          "gherkin": "Scénario: Ouverture d'une tâche avec 10 pièces jointes dont un fichier de 20 Mo\n  Étant donné une tâche contenant 10 pièces jointes, dont un fichier de 20 Mo\n  Quand l'utilisateur ouvre cette tâche puis fait défiler toutes les pièces jointes\n  Alors la fiche s'affiche et toutes les pièces jointes sont accessibles\n  Et l'application ne se ferme pas à aucun moment"
+        },
+        {
+          "scenario": "Pièce jointe inaccessible ou illisible (cas d'erreur)",
+          "gherkin": "Scénario: Pièce jointe corrompue, supprimée ou indisponible faute de réseau\n  Étant donné une tâche dont une pièce jointe est corrompue, supprimée côté serveur ou impossible à charger faute de connexion\n  Quand l'utilisateur ouvre la tâche puis tente d'afficher cette pièce jointe\n  Alors un message d'erreur explicite s'affiche à la place de la pièce jointe\n  Et le reste de la fiche (titre, description, statut, commentaires) reste consultable\n  Et l'application ne se ferme pas"
+        },
+        {
+          "scenario": "Validation sur les appareils concernés par les retours",
+          "gherkin": "Scénario: Campagne de test sur les configurations remontées\n  Étant donné un appareil Samsung sous Android 14 et au moins un autre appareil Android d'un fabricant différent\n  Quand la QA ouvre 20 tâches avec photo ou pièce jointe sur chaque appareil\n  Alors aucun plantage n'est constaté sur les 20 ouvertures de chaque appareil"
+        }
+      ],
+      "story_points": 5,
+      "hypotheses_estimation": "Hypothèses : (1) le plantage est localisé dans la nouvelle visionneuse de pièces jointes introduite en v3.8 (cohérent avec la date des retours, mais à confirmer par l'analyse des traces de crash) ; (2) la cause est reproductible en local sur Android 14 ; (3) le correctif ne demande pas de refonte de la visionneuse ; (4) une publication corrective sur les stores est possible sans retard particulier. L'estimation inclut le diagnostic, le correctif, les tests automatisés ou manuels sur plusieurs appareils, ainsi que la préparation de la publication corrective.",
+      "ecart_avec_effort_rice": "L'effort RICE est de 3 points ; nous estimons 5 points. Le RICE suppose probablement un correctif ponctuel, alors que la cause racine n'est pas encore identifiée (une seule version, plusieurs appareils et pièces jointes de types variés). Nous ajoutons aussi le temps de QA sur plusieurs appareils et la publication corrective. Si le diagnostic montre une cause simple, par exemple un cas non géré dans la visionneuse, 3 points redeviennent réalistes.",
+      "decoupage": [],
+      "questions_ouvertes": [
+        "Disposons-nous des rapports de crash (outil de suivi des plantages) pour identifier la cause racine et le périmètre exact (versions d'Android, fabricants, types de fichiers) ?",
+        "FB-037 ne mentionne pas de pièce jointe : le plantage touche-t-il aussi des tâches sans pièce jointe ? Cela changerait le périmètre et l'estimation.",
+        "Le plantage est-il systématique pour toute pièce jointe ou seulement pour certains types, tailles ou sources (photo prise depuis l'appli, import, GitHub) ?",
+        "Une publication corrective hors sprint est-elle possible, sans attendre le sprint du 2026-11-18 ? L'incident est bloquant depuis le 2026-11-07, donc l'objectif T4 « aucun incident bloquant non résolu sous 48 h » est déjà dépassé.",
+        "Un retour arrière vers la v3.7 ou la désactivation de la nouvelle visionneuse (si elle est pilotable à distance) est-il envisageable comme mesure d'attente ?",
+        "Quelle est la version minimale d'Android supportée et quelle matrice d'appareils la QA doit-elle couvrir ?",
+        "Quelle communication prévoir envers les clients touchés, notamment ceux qui sont passés au navigateur mobile (FB-037) ?",
+        "Combien d'utilisateurs actifs sont concernés, et des comptes Business ou Enterprise sont-ils à risque de non-renouvellement ?",
+        "Le plantage existe-t-il aussi sur iOS ou est-il propre à Android ? Les retours reçus ne concernent qu'Android."
+      ],
+      "hors_perimetre": [
+        "Refonte ou nouvelles fonctionnalités de la visionneuse de pièces jointes (annotation, zoom avancé, partage).",
+        "Vérification de l'application iOS et de l'application web, sauf si l'analyse montre une cause commune.",
+        "Mise en place d'un nouvel outil de suivi des plantages ou d'une stratégie générale de tests de non-régression mobile.",
+        "Changement des formats ou des tailles maximales de pièces jointes acceptés.",
+        "Rédaction et envoi de la communication client (traité par l'équipe support ou produit)."
+      ],
+      "sources": [
+        "FB-029",
+        "FB-033",
+        "FB-037",
+        "FB-047"
+      ],
+      "theme_id": "TH-9"
+    }
+  ]
+}

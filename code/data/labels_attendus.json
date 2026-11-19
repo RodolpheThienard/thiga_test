@@ -1,0 +1,486 @@
+{
+  "_avertissement": "Étiquettes de référence issues du plan de génération. À relire et valider par l'humain avant de servir à l'évaluation de l'agent.",
+  "themes": {
+    "T1": {
+      "libelle": "Export PDF du planning inexploitable (mise en page, pagination, charte)",
+      "backlog_attendu": "BL-101"
+    },
+    "T2": {
+      "libelle": "Connexion SSO en échec ou déconnexions répétées depuis la v4.2",
+      "backlog_attendu": "NOUVEAU"
+    },
+    "T3": {
+      "libelle": "Crash de l'application Android à l'ouverture d'une tâche (v3.8)",
+      "backlog_attendu": "NOUVEAU"
+    },
+    "T4": {
+      "libelle": "Intégration GitLab (liaison merge requests / tâches)",
+      "backlog_attendu": "BL-102"
+    },
+    "T5": {
+      "libelle": "Création de dépendances par glisser-déposer dans le Gantt",
+      "backlog_attendu": "BL-103"
+    },
+    "T6": {
+      "libelle": "Trop de notifications email, besoin de résumé ou de filtres",
+      "backlog_attendu": "BL-104"
+    },
+    "T7": {
+      "libelle": "Synchronisation des échéances avec Google Agenda / Outlook",
+      "backlog_attendu": "BL-105"
+    },
+    "T8": {
+      "libelle": "Lenteur du Kanban sur les gros projets",
+      "backlog_attendu": "NOUVEAU"
+    },
+    "T9": {
+      "libelle": "Export détaillé des temps passés pour la facturation",
+      "backlog_attendu": "BL-110 (insuffisant)"
+    },
+    "HV": {
+      "libelle": "Demandes hors vision produit (paie, CRM)",
+      "backlog_attendu": "Won't"
+    }
+  },
+  "feedbacks": [
+    {
+      "id": "FB-001",
+      "themes": [],
+      "categorie": "Non actionnable",
+      "gravite": null,
+      "enjeu_business": null
+    },
+    {
+      "id": "FB-002",
+      "themes": [
+        "T6"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-003",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-004",
+      "themes": [
+        "T5"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-005",
+      "themes": [],
+      "categorie": "Question/Support",
+      "gravite": null,
+      "enjeu_business": null
+    },
+    {
+      "id": "FB-006",
+      "themes": [
+        "T4"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Adoption"
+    },
+    {
+      "id": "FB-007",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-008",
+      "themes": [
+        "T6"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-009",
+      "themes": [
+        "T7"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Expansion"
+    },
+    {
+      "id": "FB-010",
+      "themes": [
+        "T9"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-011",
+      "themes": [
+        "HV"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Expansion"
+    },
+    {
+      "id": "FB-012",
+      "themes": [
+        "T8"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-013",
+      "themes": [
+        "T4"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-014",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-015",
+      "themes": [
+        "T5"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-016",
+      "themes": [
+        "T6"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-017",
+      "themes": [
+        "T4"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Adoption"
+    },
+    {
+      "id": "FB-018",
+      "themes": [
+        "T7"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-019",
+      "themes": [],
+      "categorie": "Non actionnable",
+      "gravite": null,
+      "enjeu_business": null
+    },
+    {
+      "id": "FB-020",
+      "themes": [
+        "T9"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-021",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-022",
+      "themes": [],
+      "categorie": "Question/Support",
+      "gravite": null,
+      "enjeu_business": null
+    },
+    {
+      "id": "FB-023",
+      "themes": [
+        "T5"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-024",
+      "themes": [
+        "T6"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-025",
+      "themes": [
+        "T6"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-026",
+      "themes": [
+        "T8"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-027",
+      "themes": [
+        "T4"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-028",
+      "themes": [
+        "T7"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-029",
+      "themes": [
+        "T3"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-030",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-031",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-032",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-033",
+      "themes": [
+        "T3"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-034",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-035",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-036",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-037",
+      "themes": [
+        "T3"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-038",
+      "themes": [
+        "T2",
+        "T8"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-039",
+      "themes": [
+        "T4"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-040",
+      "themes": [
+        "T7"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-041",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-042",
+      "themes": [
+        "T3"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-043",
+      "themes": [
+        "T9"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-044",
+      "themes": [
+        "T8"
+      ],
+      "categorie": "Bug",
+      "gravite": "Majeur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-045",
+      "themes": [
+        "T1"
+      ],
+      "categorie": "UX/Utilisabilité",
+      "gravite": "Mineur",
+      "enjeu_business": "Efficacité"
+    },
+    {
+      "id": "FB-046",
+      "themes": [
+        "T2"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-047",
+      "themes": [
+        "T3"
+      ],
+      "categorie": "Bug",
+      "gravite": "Bloquant",
+      "enjeu_business": "Rétention"
+    },
+    {
+      "id": "FB-048",
+      "themes": [],
+      "categorie": "Non actionnable",
+      "gravite": null,
+      "enjeu_business": null
+    },
+    {
+      "id": "FB-049",
+      "themes": [
+        "HV"
+      ],
+      "categorie": "Demande de fonctionnalité",
+      "gravite": "Mineur",
+      "enjeu_business": "Expansion"
+    },
+    {
+      "id": "FB-050",
+      "themes": [],
+      "categorie": "Question/Support",
+      "gravite": null,
+      "enjeu_business": null
+    }
+  ]
+}

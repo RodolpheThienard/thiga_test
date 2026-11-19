@@ -1,0 +1,110 @@
+[
+  {
+    "id": "BL-101",
+    "titre": "Export PDF du planning : pagination et mise en page personnalisable",
+    "description": "Permettre un export PDF lisible du Gantt et des jalons (orientation, ajustement à la page, logo).",
+    "type": "Amélioration",
+    "statut": "À faire",
+    "date_creation": "2026-06-12",
+    "estimation_points": null
+  },
+  {
+    "id": "BL-102",
+    "titre": "Intégration GitLab : lier merge requests et tâches",
+    "description": "Équivalent de l'intégration GitHub existante, compatible GitLab SaaS et auto-hébergé.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-05-03",
+    "estimation_points": 13
+  },
+  {
+    "id": "BL-103",
+    "titre": "Dépendances par glisser-déposer dans le Gantt",
+    "description": "Créer une dépendance fin-début en tirant un lien entre deux barres du Gantt.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-04-18",
+    "estimation_points": 21
+  },
+  {
+    "id": "BL-104",
+    "titre": "Résumé quotidien des notifications",
+    "description": "Option d'envoi groupé quotidien des notifications email, avec choix des événements.",
+    "type": "Amélioration",
+    "statut": "À faire",
+    "date_creation": "2026-09-02",
+    "estimation_points": 5
+  },
+  {
+    "id": "BL-105",
+    "titre": "Synchronisation des échéances avec Google Agenda",
+    "description": "Flux iCal ou synchronisation en sens unique des échéances et jalons.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-07-21",
+    "estimation_points": 8
+  },
+  {
+    "id": "BL-106",
+    "titre": "Mode hors ligne de l'application mobile",
+    "description": "Consulter et modifier ses tâches sans connexion, synchronisation au retour du réseau.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-03-10",
+    "estimation_points": 34
+  },
+  {
+    "id": "BL-107",
+    "titre": "Tableau de bord personnel sur la page d'accueil",
+    "description": "Vue « Mes tâches de la semaine » et alertes de retard.",
+    "type": "Fonctionnalité",
+    "statut": "En cours",
+    "date_creation": "2026-08-14",
+    "estimation_points": 8
+  },
+  {
+    "id": "BL-108",
+    "titre": "Modèles de projets partagés entre espaces de travail",
+    "description": "Réutiliser un modèle de projet dans plusieurs espaces d'une même organisation.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-06-30",
+    "estimation_points": 5
+  },
+  {
+    "id": "BL-109",
+    "titre": "Champs personnalisés sur les tâches",
+    "description": "Ajouter des champs typés (liste, date, nombre) configurables par projet.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-02-25",
+    "estimation_points": 13
+  },
+  {
+    "id": "BL-110",
+    "titre": "Rapport de temps passé par projet",
+    "description": "Rapport du temps total passé par projet, export CSV.",
+    "type": "Fonctionnalité",
+    "statut": "Livré",
+    "date_creation": "2026-01-15",
+    "estimation_points": 5
+  },
+  {
+    "id": "BL-111",
+    "titre": "Notifications dans un canal Slack",
+    "description": "Envoyer les événements d'un projet dans un canal Slack choisi.",
+    "type": "Fonctionnalité",
+    "statut": "À faire",
+    "date_creation": "2026-09-20",
+    "estimation_points": 5
+  },
+  {
+    "id": "BL-112",
+    "titre": "Mise à jour des dépendances de sécurité du back-end",
+    "description": "Montée de version du framework et des bibliothèques d'authentification.",
+    "type": "Technique",
+    "statut": "À faire",
+    "date_creation": "2026-10-01",
+    "estimation_points": 3
+  }
+]

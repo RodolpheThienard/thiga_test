@@ -1,0 +1,7 @@
+.env
+__pycache__/
+.pytest_cache/
+cache/appels/*
+!cache/appels/.gitkeep
+exports/*
+!exports/.gitkeep
